@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Product,TopSelling} from './top-selling-data';
+import { Champion } from '../../../models/champion.model';
+import { ChampionShipService } from '../../../services/champion-ship.service';
+//import { ChampionShipService } from '../../services/champion-ship.service';
+//import { Champion } from '../../models/champion.model';
 
 @Component({
   selector: 'app-top-selling',
@@ -7,14 +10,24 @@ import {Product,TopSelling} from './top-selling-data';
 })
 export class TopSellingComponent implements OnInit {
 
-  topSelling:Product[];
+  
 
-  constructor() { 
-
-    this.topSelling=TopSelling;
-  }
+  champions?: Champion[];
+  constructor(private championService: ChampionShipService) { }
 
   ngOnInit(): void {
+    this.getAllChampions();
+  }
+
+  getAllChampions(): void{
+    this.championService.getChampions()
+    .subscribe({
+      next: (data) => {
+        this.champions = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    });
   }
 
 }
