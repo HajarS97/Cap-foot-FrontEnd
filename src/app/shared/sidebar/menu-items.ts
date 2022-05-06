@@ -11,8 +11,8 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
-    path: '/component/alert',
-    title: 'Alert',
+    path: '/component/addChampion',
+    title: 'Ajouter Champion',
     icon: 'bi bi-bell',
     class: '',
     extralink: false,
