@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ComponentsRoutes } from './component.routing';
 import { NgbdpaginationBasicComponent } from './pagination/pagination.component';
-import { NgbdAlertBasicComponent } from './alert/alert.component';
+import { addChampionComponent } from './addChampion/addChampion.component';
 import { NgbdDropdownBasicComponent } from './dropdown-collapse/dropdown-collapse.component';
 import { NgbdnavBasicComponent } from './nav/nav.component';
 import { ButtonsComponent } from './buttons/buttons.component';
@@ -26,7 +26,7 @@ import { SuperviserComponent } from './match/superviser/superviser.component';
   ],
   declarations: [
     NgbdpaginationBasicComponent,
-    NgbdAlertBasicComponent,
+    addChampionComponent,
     NgbdDropdownBasicComponent,
     NgbdnavBasicComponent,
     ButtonsComponent,

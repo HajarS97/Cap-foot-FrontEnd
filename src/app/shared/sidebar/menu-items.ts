@@ -4,7 +4,7 @@ export const ROUTES: RouteInfo[] = [
  
   {
     path: '/dashboard',
-    title: 'Dashboard',
+    title: 'Tableau de bord',
     icon: 'bi bi-speedometer2',
     class: '',
     extralink: false,
@@ -18,6 +18,14 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+  // {
+  //   path: '/component/addChampion',
+  //   title: 'Ajouter Champion',
+  //   icon: 'bi bi-bell',
+  //   class: '',
+  //   extralink: false,
+  //   submenu: []
+  // },
   {
     path: '/component/badges',
     title: 'Badges',

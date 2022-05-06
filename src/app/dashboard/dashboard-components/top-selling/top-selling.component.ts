@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Champion } from '../../../models/champion.model';
 import { ChampionShipService } from '../../../services/champion-ship.service';
 //import { ChampionShipService } from '../../services/champion-ship.service';
@@ -13,7 +14,7 @@ export class TopSellingComponent implements OnInit {
   
 
   champions?: Champion[];
-  constructor(private championService: ChampionShipService) { }
+  constructor(private championService: ChampionShipService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllChampions();
@@ -29,5 +30,9 @@ export class TopSellingComponent implements OnInit {
       error: (e) => console.error(e)
     });
   }
+
+  goToAddChampion() {
+    this.router.navigateByUrl('/component/addChampion');
+  };
 
 }
