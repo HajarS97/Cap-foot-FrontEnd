@@ -7,12 +7,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ChampionShipService {
-  public host:string="http://localhost:8082"
+  public host:string="http://localhost:8082/api/v1/admin/championships"
 
   constructor(private http:HttpClient) { }
 
   getChampions(): Observable<Champion[]>{
-    let apiChampion = this.host+"/api/v1/admin/championships/getall";
+    let apiChampion = this.host+"/getall";
     return this.http.get<Champion[]>(apiChampion);
+  }
+
+  deleteChampionship(id:number):Observable<any> {
+    let apiChampion = this.host+"/delete/"+id;
+    return this.http.delete<Champion[]>(apiChampion);
   }
 }
