@@ -8,6 +8,8 @@ import { BadgeComponent } from './badge/badge.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
+import { MatchComponent } from './match/match.component';
+import { SuperviserComponent } from './match/superviser/superviser.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -27,10 +29,18 @@ export const ComponentsRoutes: Routes = [
 				component: NgbdpaginationBasicComponent
 			},
 			{
+				path: 'match/superviser/:id',
+				component: SuperviserComponent
+			},
+			{
 				path: 'badges',
 				component: BadgeComponent
 			},
 			{
+				path: 'match',
+				component: MatchComponent
+      },
+      {
 				path: 'addChampion',
 				component: addChampionComponent
 			},

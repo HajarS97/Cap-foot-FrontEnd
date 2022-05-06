@@ -10,6 +10,14 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+  {
+    path: '/component/match',
+    title: 'Matchs',
+    icon: 'bi bi-card-checklist',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
   // {
   //   path: '/component/addChampion',
   //   title: 'Ajouter Champion',
