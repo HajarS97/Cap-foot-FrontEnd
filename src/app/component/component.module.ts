@@ -6,13 +6,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ComponentsRoutes } from './component.routing';
 import { NgbdpaginationBasicComponent } from './pagination/pagination.component';
-import { NgbdAlertBasicComponent } from './alert/alert.component';
+import { addChampionComponent } from './addChampion/addChampion.component';
 import { NgbdDropdownBasicComponent } from './dropdown-collapse/dropdown-collapse.component';
 import { NgbdnavBasicComponent } from './nav/nav.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from "./table/table.component";
-import { ChampionShipComponent } from './champion-ship/champion-ship.component';
+import { MatchComponent } from './match/match.component';
+import { SuperviserComponent } from './match/superviser/superviser.component';
 
 @NgModule({
   imports: [
@@ -24,13 +25,14 @@ import { ChampionShipComponent } from './champion-ship/champion-ship.component';
   ],
   declarations: [
     NgbdpaginationBasicComponent,
-    NgbdAlertBasicComponent,
+    addChampionComponent,
     NgbdDropdownBasicComponent,
     NgbdnavBasicComponent,
     ButtonsComponent,
     CardsComponent,
     TableComponent,
-    ChampionShipComponent
+    MatchComponent,
+    SuperviserComponent
   ]
 })
 export class ComponentsModule { }

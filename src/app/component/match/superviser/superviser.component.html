@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-body">
+        <!-- title -->
+                <h4 class="card-title">Capgemini foot</h4>
+                <h5 class="card-subtitle">Match : {{match.id}}</h5>
+
+                <div>
+                    Team Home : <span><Strong>{{match.teamHome?.name}}</Strong></span>  <span style="margin-left: 10px; margin-right: 10px; font-size: large;">  VS  </span>  Team Away : <span><Strong>{{match.teamAway?.name}}</Strong></span>
+                    
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th class="text-dark font-medium fs-4">Score Team Home</th>
+                                <th class="text-dark font-medium fs-4">Score Team Away</th>
+                                <th class="text-dark font-medium fs-4"></th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input class="mb-0 fw-normal" [(ngModel)]="match.scoreHome">
+                                </td>
+                                <td>
+                                    <input class="mb-0 fw-normal" [(ngModel)]="match.scoreAway">
+                                </td>
+                                <td>
+                                    <h5 class="mb-0 fw-normal"><button class="btn btn-success" (click)="updateScore(match.id, match)">Update Score</button></h5>
+                                </td>
+                            </tr>              
+                        </tbody>
+                    </table>
+                </div>
+    </div>
+</div>

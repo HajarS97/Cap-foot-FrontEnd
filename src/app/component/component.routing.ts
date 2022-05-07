@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { NgbdpaginationBasicComponent } from './pagination/pagination.component';
-import { NgbdAlertBasicComponent } from './alert/alert.component';
+import { addChampionComponent } from './addChampion/addChampion.component';
 
 import { NgbdDropdownBasicComponent } from './dropdown-collapse/dropdown-collapse.component';
 import { NgbdnavBasicComponent } from './nav/nav.component';
@@ -8,6 +8,8 @@ import { BadgeComponent } from './badge/badge.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
+import { MatchComponent } from './match/match.component';
+import { SuperviserComponent } from './match/superviser/superviser.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -27,12 +29,20 @@ export const ComponentsRoutes: Routes = [
 				component: NgbdpaginationBasicComponent
 			},
 			{
+				path: 'match/superviser/:id',
+				component: SuperviserComponent
+			},
+			{
 				path: 'badges',
 				component: BadgeComponent
 			},
 			{
-				path: 'alert',
-				component: NgbdAlertBasicComponent
+				path: 'match',
+				component: MatchComponent
+      },
+      {
+				path: 'addChampion',
+				component: addChampionComponent
 			},
 			{
 				path: 'dropdown',

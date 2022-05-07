@@ -12,8 +12,18 @@ export class ChampionShipService {
   constructor(private http:HttpClient) { }
 
   getChampions(): Observable<Champion[]>{
-    let apiChampion = this.host+"/getall";
-    return this.http.get<Champion[]>(apiChampion);
+    let apiChampions = this.host+"/getall";
+    return this.http.get<Champion[]>(apiChampions);
+  }
+
+  createChampion(data: any): Observable<any> {
+    let addChampion = this.host+"/add";
+    return this.http.post(addChampion, data);
+  }
+  
+  updateChampion(id: any, data: any): Observable<any> {
+    let updateChampion = this.host+"/update";
+    return this.http.put(`${updateChampion}/${id}`, data);
   }
 
   deleteChampionship(id:number):Observable<any> {
