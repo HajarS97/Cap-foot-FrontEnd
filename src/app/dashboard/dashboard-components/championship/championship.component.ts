@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NotificationsService } from '../../../services/notifications.service';
 import { Champion } from '../../../models/champion.model';
 import { ChampionShipService } from '../../../services/champion-ship.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-championship',
@@ -14,9 +15,11 @@ champions?:Champion[];
 showModal : Boolean = false;
 displayStyle = "none";
 idToDelete?: number;
+inProgress?:boolean;
 
   constructor(private championshipService: ChampionShipService,
-              private notification:NotificationsService) { }
+              private notification:NotificationsService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.getAllChampions();
@@ -33,8 +36,10 @@ idToDelete?: number;
       error: (e) => console.error(e)
     });
   }
-
   
+  toggleEditable(inProgress:boolean){ 
+    console.log("inProgress : ", inProgress);
+  }
 
   openModal(id:number){
     this.showModal=true;
@@ -64,5 +69,8 @@ idToDelete?: number;
     });
   }
 
+  goToAddChampion() {
+    this.router.navigateByUrl('/component/addChampion');
+  };
 
 }
