@@ -16,13 +16,19 @@ export class ChampionShipService {
     return this.http.get<Champion[]>(apiChampions);
   }
 
+  getChampion(id: any): Observable<Champion>{
+    let apiChampion = this.host+`/${id}`;
+    console.log(apiChampion);
+    return this.http.get<Champion>(apiChampion);
+  }
+
   createChampion(data: any): Observable<any> {
     let addChampion = this.host+"/add";
     return this.http.post(addChampion, data);
   }
   
-  updateChampion(id: any, data: any): Observable<any> {
+  updateChampion(data: any): Observable<any> {
     let updateChampion = this.host+"/update";
-    return this.http.put(`${updateChampion}/${id}`, data);
+    return this.http.put(`${updateChampion}`, data);
   }
 }

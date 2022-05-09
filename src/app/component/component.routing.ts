@@ -3,7 +3,7 @@ import { NgbdpaginationBasicComponent } from './pagination/pagination.component'
 import { addChampionComponent } from './addChampion/addChampion.component';
 
 import { NgbdDropdownBasicComponent } from './dropdown-collapse/dropdown-collapse.component';
-import { NgbdnavBasicComponent } from './nav/nav.component';
+import { championshipDetailComponent } from './championshipDetail/championship-detail.component';
 import { BadgeComponent } from './badge/badge.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
@@ -39,8 +39,8 @@ export const ComponentsRoutes: Routes = [
 				component: NgbdDropdownBasicComponent
 			},
 			{
-				path: 'nav',
-				component: NgbdnavBasicComponent
+				path: 'championDetail/:id',
+				component: championshipDetailComponent
 			},
 			{
 				path: 'buttons',
