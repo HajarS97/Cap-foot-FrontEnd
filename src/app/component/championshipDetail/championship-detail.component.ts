@@ -51,15 +51,18 @@ export class championshipDetailComponent implements OnInit{
 
   updateChampionShip(): void {
     this.message = '';
-
     this.championShipService.updateChampion(this.currentChampion)
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.message = res.message ? res.message : 'This ChampionShip was updated successfully!';
+          this.submitted = true;
         },
         error: (e) => console.error(e)
       });
+  }
+
+  backChampionSip(): void{
+    this.router.navigateByUrl('/dashboard');
   }
 
   

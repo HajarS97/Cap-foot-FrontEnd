@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Champion } from '../../models/champion.model';
 import { ChampionShipService } from '../../services/champion-ship.service';
 
@@ -29,7 +30,7 @@ export class addChampionComponent implements OnInit {
   };
   submitted = false;
   etats: any = ['INSCRIPTION', 'GROUPE', 'QUART_FINAL', 'DEMI_FINAL', 'FINAL'];
-  constructor(private championService: ChampionShipService) {}
+  constructor(private championService: ChampionShipService, private router: Router) {}
 
   ngOnInit(): void {
   }
@@ -61,6 +62,10 @@ export class addChampionComponent implements OnInit {
       statut: '',
       progress: false
     };
+  }
+
+  backChampionSip(): void{
+    this.router.navigateByUrl('/dashboard');
   }
 
 
