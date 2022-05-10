@@ -11,11 +11,13 @@ import { ChampionShipService } from '../../../services/champion-ship.service';
 })
 export class TopSellingComponent implements OnInit {
 
-  
-
+  currentChampion: Champion = {};
   champions?: Champion[];
+  currentIndex = -1;
+
   constructor(private championService: ChampionShipService, private router: Router) { }
 
+  
   ngOnInit(): void {
     this.getAllChampions();
   }
@@ -29,6 +31,12 @@ export class TopSellingComponent implements OnInit {
       },
       error: (e) => console.error(e)
     });
+  }
+
+  refreshList(): void {
+    this.getAllChampions();
+    this.currentChampion = {};
+    this.currentIndex = -1;
   }
 
   goToAddChampion() {

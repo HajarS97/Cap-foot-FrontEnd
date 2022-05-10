@@ -8,7 +8,7 @@ import { ComponentsRoutes } from './component.routing';
 import { NgbdpaginationBasicComponent } from './pagination/pagination.component';
 import { addChampionComponent } from './addChampion/addChampion.component';
 import { NgbdDropdownBasicComponent } from './dropdown-collapse/dropdown-collapse.component';
-import { NgbdnavBasicComponent } from './nav/nav.component';
+import { championshipDetailComponent } from './championshipDetail/championship-detail.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from "./table/table.component";
@@ -28,7 +28,7 @@ import { GroupComponent } from './group/group/group.component';
     NgbdpaginationBasicComponent,
     addChampionComponent,
     NgbdDropdownBasicComponent,
-    NgbdnavBasicComponent,
+    championshipDetailComponent,
     ButtonsComponent,
     CardsComponent,
     TableComponent,
