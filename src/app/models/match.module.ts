@@ -8,6 +8,7 @@ export interface Match{
     site : string,
     scoreHome : number,
     scoreAway : number,
+    matchState: string,
     teamHome : Team,
     teamAway : Team
 }

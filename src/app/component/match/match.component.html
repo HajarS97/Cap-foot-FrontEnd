@@ -19,6 +19,7 @@
                         <th class="text-dark font-medium fs-4">Score Team Home</th>
                         <th class="text-dark font-medium fs-4">Score Team Away</th>
                         <th class="text-dark font-medium fs-4">Score Match</th>
+                        <th class="text-dark font-medium fs-4">Etat de Match</th>
                         <th class="text-dark font-medium fs-4"></th>
                         
                     </tr>
@@ -58,6 +59,9 @@
                         </td>
                         <td>
                             <h5 class="mb-0 fw-normal">{{match.scoreHome}} : {{match.scoreAway}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{match.matchState}}</h5>
                         </td>
                         <td>
                             <h5 class="mb-0 fw-normal"><button class="btn btn-success" (click)="superviser(match.id)">Superviser</button></h5>

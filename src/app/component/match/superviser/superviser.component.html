@@ -15,7 +15,7 @@
                             <tr>
                                 <th class="text-dark font-medium fs-4">Score Team Home</th>
                                 <th class="text-dark font-medium fs-4">Score Team Away</th>
-                                <th class="text-dark font-medium fs-4"></th>
+                                <th class="text-dark font-medium fs-4">Etat de Match</th>
                                 
                             </tr>
                         </thead>
@@ -27,6 +27,16 @@
                                 <td>
                                     <input class="mb-0 fw-normal" [(ngModel)]="match.scoreAway">
                                 </td>
+                                <td>
+                                    <h5 class="mb-0 fw-normal">
+                                        <select class="form-control" [(ngModel)]='match.matchState' class="form-select" aria-label="Default select example">
+                                            <option *ngFor=" let state of states" selected [value]="state.name">{{state.front}}</option>
+                                          </select>
+                                    </h5>
+                                </td>
+                                
+                            </tr>
+                            <tr>
                                 <td>
                                     <h5 class="mb-0 fw-normal"><button class="btn btn-success" (click)="updateScore(match.id, match)">Update Score</button></h5>
                                 </td>
