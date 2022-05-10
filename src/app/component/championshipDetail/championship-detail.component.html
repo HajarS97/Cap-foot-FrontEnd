@@ -61,6 +61,10 @@
               </div>
               <button (click)="updateChampionShip()" class="btn btn-success">Modifier ChampionShip</button>
             </div>
+            <div *ngIf="submitted">
+              <h4>ChampionShip was submitted successfully!</h4>
+              <button class="btn btn-success text-center" (click)="backChampionSip()">Retour à la liste</button>
+            </div>
           </div>
         </div>
       </div>
