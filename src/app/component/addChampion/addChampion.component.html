@@ -45,6 +45,15 @@
                 />
               </div>
               <br>
+              <div class="form-group" style="display: flex;">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Progress  </label>
+                <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+                 [checked]="champion.progress"
+                 [(ngModel)]="champion.progress" name="progress" id="progress" style="margin-left: 10%;">
+                </div>
+              </div>
+              <br>
               <div class="form-group">
               <select
               class="form-select mb-3"
