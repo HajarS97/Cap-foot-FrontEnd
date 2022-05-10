@@ -18,6 +18,14 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+  {
+    path: '/component/groups',
+    title: 'Groups',
+    icon: 'bi bi-list-ol',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
   // {
   //   path: '/component/addChampion',
   //   title: 'Ajouter Champion',
