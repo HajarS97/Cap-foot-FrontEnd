@@ -31,4 +31,9 @@ export class ChampionShipService {
     let updateChampion = this.host+"/update";
     return this.http.put(`${updateChampion}`, data);
   }
+
+  deleteChampionship(id:number):Observable<any> {
+    let apiChampion = this.host+"/delete/"+id;
+    return this.http.delete<Champion[]>(apiChampion);
+  }
 }

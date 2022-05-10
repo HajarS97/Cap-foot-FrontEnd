@@ -10,6 +10,7 @@ import { CardsComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
 import { MatchComponent } from './match/match.component';
 import { SuperviserComponent } from './match/superviser/superviser.component';
+import { GroupComponent } from './group/group/group.component';
 
 
 export const ComponentsRoutes: Routes = [
@@ -55,6 +56,11 @@ export const ComponentsRoutes: Routes = [
 			{
 				path: 'buttons',
 				component: ButtonsComponent
+			},
+			{
+				path:'groups',
+				component:GroupComponent
+		
 			}
 		]
 	}
