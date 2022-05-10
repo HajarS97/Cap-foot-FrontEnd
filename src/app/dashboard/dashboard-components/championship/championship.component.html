@@ -44,10 +44,13 @@
                                 <label class="form-check-label" for="flexSwitchCheckDefault"></label>
                               </div>
                         </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">
-                                
-                                <button type="button"   class="btn btn-link"(click)="openPopup(champion.id)"><i class="bi bi-trash"></i></button></h5>
+                        <td style="display: flex;">
+                                 <h5 class="mb-0 fw-normal">
+                                <button type="button"   class="btn btn-link" (click)="goToUpdate(champion.id)"><i class="bi bi-pencil-square"></i></button>
+                                 </h5>
+                                <h5 class="mb-0 fw-normal">
+                                    <button type="button"   class="btn btn-link"(click)="openPopup(champion.id)"><i class="bi bi-trash"></i></button>
+                                </h5>     
                         </td>
                     </tr>              
                 </tbody>

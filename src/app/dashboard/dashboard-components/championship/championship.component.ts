@@ -16,6 +16,8 @@ showModal : Boolean = false;
 displayStyle = "none";
 idToDelete?: number;
 inProgress?:boolean;
+currentIndex = -1;
+currentChampion: Champion = {};
 
   constructor(private championshipService: ChampionShipService,
               private notification:NotificationsService,
@@ -36,6 +38,12 @@ inProgress?:boolean;
       error: (e) => console.error(e)
     });
   }
+
+  refreshList(): void {
+    this.getAllChampions();
+    this.currentChampion = {};
+    this.currentIndex = -1;
+  }
   
   toggleEditable(inProgress:boolean){ 
     console.log("inProgress : ", inProgress);
@@ -45,9 +53,7 @@ inProgress?:boolean;
     this.showModal=true;
     console.log("id", this.showModal);
  }
-
  
-  
   openPopup(id: number) {
     this.displayStyle = "block";
     this.idToDelete = id;
@@ -71,6 +77,10 @@ inProgress?:boolean;
 
   goToAddChampion() {
     this.router.navigateByUrl('/component/addChampion');
+  };
+
+  goToUpdate(id:any) {
+    this.router.navigateByUrl('/component/championDetail/'+id);
   };
 
 }
