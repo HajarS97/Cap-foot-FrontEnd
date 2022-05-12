@@ -2,12 +2,28 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
+import { GroupComponent } from './navBar/group/group.component';
+import { MatchComponent } from './navBar/match/match.component';
+import { NavBarComponent } from './navBar/navBar.component';
 
 export const Approutes: Routes = [
+  {
+    path:'navBar',
+    component : NavBarComponent
+  },
+  {
+    path:'match',
+    component : MatchComponent
+  },
+  {
+    path:'group',
+    component : GroupComponent
+  },
   {
     path: '',
     component: FullComponent,
     children: [
+
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
       {
         path: 'dashboard',

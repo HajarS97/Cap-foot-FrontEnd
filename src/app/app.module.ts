@@ -19,6 +19,9 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { ToastrModule } from 'ngx-toastr';
+import { NavBarComponent } from './navBar/navBar.component';
+import { MatchComponent } from './navBar/match/match.component';
+import { GroupComponent } from './navBar/group/group.component';
 
 
 
@@ -37,6 +40,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FullComponent,
     NavigationComponent,
     SidebarComponent,
+    NavBarComponent,
+    MatchComponent,
+    GroupComponent
   ],
   imports: [
     CommonModule,
