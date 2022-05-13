@@ -22,8 +22,9 @@ import { GroupComponent } from './group/group/group.component';
     RouterModule.forChild(ComponentsRoutes),
     FormsModule,
     ReactiveFormsModule,
-    NgbModule,
+    NgbModule
   ],
+  
   declarations: [
     NgbdpaginationBasicComponent,
     addChampionComponent,

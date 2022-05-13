@@ -1,0 +1,42 @@
+<app-navBar></app-navBar>
+
+
+<div class="containerX">
+  <div style="margin: 40px 40px 20px 40px;">
+    <h4 class="card-title" style="color: #777;">Capgemini foot</h4>
+    <h5 class="card-subtitle my-2"  style="color: #39F;">Liste des matchs</h5>
+  </div>
+
+  <div class="card" style="margin: 40px 40px;">
+    <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead style="background-color: #444; color: #eee;">
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Site</th>
+                <th scope="col">Team Home</th>
+                <th scope="col">Team Away</th>
+                <th scope="col">Score Home</th>
+                <th scope="col">Score Away</th>
+                <th scope="col">Score</th>
+                <th scope="col">Etat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let match of matchs'>
+                <td>{{match. matchDate}}</td>
+                <td>{{match. site}}</td>
+                <td>{{match. teamHome?.name}}</td>
+                <td>{{match. teamAway?.name}}</td>
+                <td>{{match. scoreHome}}</td>
+                <td>{{match. scoreAway}}</td>
+                <td>{{match. scoreHome}}:{{match.scoreAway}}</td>
+                <td>{{match. matchState}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>    
+</div>

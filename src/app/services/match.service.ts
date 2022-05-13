@@ -25,3 +25,4 @@ export class MatchService {
     return this.http.put('http://localhost:8082/api/v1/admin/matchs/score/'+id, match)
   }
 }
+  

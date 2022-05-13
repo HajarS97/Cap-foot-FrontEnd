@@ -22,6 +22,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { NavBarComponent } from './navBar/navBar.component';
+import { MatchComponent } from './navBar/match/match.component';
+import { GroupComponent } from './navBar/group/group.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -40,7 +43,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidebarComponent,
     BoardAdminComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    NavBarComponent,
+    MatchComponent,
+    GroupComponent
   ],
   imports: [
     CommonModule,
