@@ -2,8 +2,7 @@ import { Team } from "./team.module";
 
 export interface Match{
     id : number,
-    groupePhase : boolean,
-    directEliminationPhase : boolean,
+    stage : string,
     matchDate : Date,
     site : string,
     scoreHome : number,

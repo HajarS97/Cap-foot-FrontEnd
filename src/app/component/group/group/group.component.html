@@ -5,15 +5,16 @@
           <h4 class="card-title">Groupes</h4>
           <h5 class="card-subtitle text-muted">Groupe A</h5>
           <div class="table-responsive">
-            <table class="table align-middle text-nowrap">
+            <table class="table align-middle text-nowrap table-center">
                 <thead>
                     <tr>
-                        <th class="text-dark font-medium fs-4">Equipe</th>
-                        <th class="text-dark font-medium fs-4">Status</th>
-                        <th class="text-dark font-medium fs-4">Points</th>
-                        <th class="text-dark font-medium fs-4">Victoire</th>
-                        <th class="text-dark font-medium fs-4">Défaite</th>
-                        <th class="text-dark font-medium fs-4">Nul</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Equipe</th>
+                       
+                        <th class="text-dark font-medium fs-4 td-meduim">Points</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Joués</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">V</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">D</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">N</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let group of groupA">
@@ -21,11 +22,12 @@
                         <td class="fs-4">
                             <h5 class="mb-0 font-medium">{{group.teamName}}</h5>
                         </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">Status</h5>
-                        </td>
+                        
                         <td>
                             <h5 class="mb-0 fw-normal">{{group.cumulPoint}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch +group.nbLossMatch +group.nbDrawMatch}}</h5>
                         </td>
                         <td>
                             <h5 class="mb-0 fw-normal">{{group.nbWonMatch}}</h5>
@@ -47,15 +49,16 @@
           <h4 class="card-title">Groupes</h4>
           <h5 class="card-subtitle text-muted">Groupe B</h5>
           <div class="table-responsive">
-            <table class="table align-middle text-nowrap">
+            <table class="table align-middle text-nowrap table-center">
                 <thead>
                     <tr>
-                        <th class="text-dark font-medium fs-4">Equipe</th>
-                        <th class="text-dark font-medium fs-4">Status</th>
-                        <th class="text-dark font-medium fs-4">Points</th>
-                        <th class="text-dark font-medium fs-4">Victoire</th>
-                        <th class="text-dark font-medium fs-4">Défaite</th>
-                        <th class="text-dark font-medium fs-4">Nul</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Equipe</th>
+                       
+                        <th class="text-dark font-medium fs-4 td-meduim">Points</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Joués</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">V</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">D</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">N</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let group of groupB">
@@ -63,11 +66,12 @@
                         <td class="fs-4">
                             <h5 class="mb-0 font-medium">{{group.teamName}}</h5>
                         </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">Status</h5>
-                        </td>
+                        
                         <td>
                             <h5 class="mb-0 fw-normal">{{group.cumulPoint}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch +group.nbLossMatch +group.nbDrawMatch}}</h5>
                         </td>
                         <td>
                             <h5 class="mb-0 fw-normal">{{group.nbWonMatch}}</h5>
@@ -89,15 +93,16 @@
           <h4 class="card-title">Groupes</h4>
           <h5 class="card-subtitle text-muted">Groupe C</h5>
           <div class="table-responsive">
-            <table class="table align-middle text-nowrap">
+            <table class="table align-middle text-nowrap table-center">
                 <thead>
                     <tr>
-                        <th class="text-dark font-medium fs-4">Equipe</th>
-                        <th class="text-dark font-medium fs-4">Status</th>
-                        <th class="text-dark font-medium fs-4">Points</th>
-                        <th class="text-dark font-medium fs-4">Victoire</th>
-                        <th class="text-dark font-medium fs-4">Défaite</th>
-                        <th class="text-dark font-medium fs-4">Nul</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Equipe</th>
+                       
+                        <th class="text-dark font-medium fs-4 td-meduim">Points</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Joués</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">V</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">D</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">N</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let group of groupC">
@@ -105,11 +110,12 @@
                         <td class="fs-4">
                             <h5 class="mb-0 font-medium">{{group.teamName}}</h5>
                         </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">Status</h5>
-                        </td>
+                        
                         <td>
                             <h5 class="mb-0 fw-normal">{{group.cumulPoint}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch +group.nbLossMatch +group.nbDrawMatch}}</h5>
                         </td>
                         <td>
                             <h5 class="mb-0 fw-normal">{{group.nbWonMatch}}</h5>
@@ -131,15 +137,16 @@
           <h4 class="card-title">Groupes</h4>
           <h5 class="card-subtitle text-muted">Groupe D</h5>
           <div class="table-responsive">
-            <table class="table align-middle text-nowrap">
+            <table class="table align-middle text-nowrap table-center">
                 <thead>
                     <tr>
-                        <th class="text-dark font-medium fs-4">Equipe</th>
-                        <th class="text-dark font-medium fs-4">Status</th>
-                        <th class="text-dark font-medium fs-4">Points</th>
-                        <th class="text-dark font-medium fs-4">Victoire</th>
-                        <th class="text-dark font-medium fs-4">Défaite</th>
-                        <th class="text-dark font-medium fs-4">Nul</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Equipe</th>
+                       
+                        <th class="text-dark font-medium fs-4 td-meduim">Points</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Joués</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">V</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">D</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">N</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let group of groupD">
@@ -147,11 +154,12 @@
                         <td class="fs-4">
                             <h5 class="mb-0 font-medium">{{group.teamName}}</h5>
                         </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">Status</h5>
-                        </td>
+                        
                         <td>
                             <h5 class="mb-0 fw-normal">{{group.cumulPoint}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch +group.nbLossMatch +group.nbDrawMatch}}</h5>
                         </td>
                         <td>
                             <h5 class="mb-0 fw-normal">{{group.nbWonMatch}}</h5>
@@ -173,15 +181,16 @@
           <h4 class="card-title">Groupes</h4>
           <h5 class="card-subtitle text-muted">Groupe E</h5>
           <div class="table-responsive">
-            <table class="table align-middle text-nowrap">
+            <table class="table align-middle text-nowrap table-center">
                 <thead>
                     <tr>
-                        <th class="text-dark font-medium fs-4">Equipe</th>
-                        <th class="text-dark font-medium fs-4">Status</th>
-                        <th class="text-dark font-medium fs-4">Points</th>
-                        <th class="text-dark font-medium fs-4">Victoire</th>
-                        <th class="text-dark font-medium fs-4">Défaite</th>
-                        <th class="text-dark font-medium fs-4">Nul</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Equipe</th>
+                       
+                        <th class="text-dark font-medium fs-4 td-meduim">Points</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Joués</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">V</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">D</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">N</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let group of groupE">
@@ -189,11 +198,12 @@
                         <td class="fs-4">
                             <h5 class="mb-0 font-medium">{{group.teamName}}</h5>
                         </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">Status</h5>
-                        </td>
+                        
                         <td>
                             <h5 class="mb-0 fw-normal">{{group.cumulPoint}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch +group.nbLossMatch +group.nbDrawMatch}}</h5>
                         </td>
                         <td>
                             <h5 class="mb-0 fw-normal">{{group.nbWonMatch}}</h5>
@@ -215,15 +225,16 @@
           <h4 class="card-title">Groupes</h4>
           <h5 class="card-subtitle text-muted">Groupe F</h5>
           <div class="table-responsive">
-            <table class="table align-middle text-nowrap">
+            <table class="table align-middle text-nowrap table-center">
                 <thead>
                     <tr>
-                        <th class="text-dark font-medium fs-4">Equipe</th>
-                        <th class="text-dark font-medium fs-4">Status</th>
-                        <th class="text-dark font-medium fs-4">Points</th>
-                        <th class="text-dark font-medium fs-4">Victoire</th>
-                        <th class="text-dark font-medium fs-4">Défaite</th>
-                        <th class="text-dark font-medium fs-4">Nul</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Equipe</th>
+                       
+                        <th class="text-dark font-medium fs-4 td-meduim">Points</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Joués</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">V</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">D</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">N</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let group of groupF">
@@ -231,20 +242,21 @@
                         <td class="fs-4">
                             <h5 class="mb-0 font-medium">{{group.teamName}}</h5>
                         </td>
+                        
                         <td>
-                            <h5 class="mb-0 fw-normal">Status</h5>
+                            <h5 class="mb-0 fw-normal">{{group.cumulPoint}} </h5>
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{group.cumulPoint}} Points</h5>
+                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch +group.nbLossMatch +group.nbDrawMatch}}</h5>
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch}} Won</h5>
+                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch}} </h5>
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{group.nbLossMatch}} Loss</h5>
+                            <h5 class="mb-0 fw-normal">{{group.nbLossMatch}} </h5>
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{group.nbDrawMatch}} Draw</h5>
+                            <h5 class="mb-0 fw-normal">{{group.nbDrawMatch}} </h5>
                         </td>
                     </tr>              
                 </tbody>
@@ -257,15 +269,16 @@
           <h4 class="card-title">Groupes</h4>
           <h5 class="card-subtitle text-muted">Groupe G</h5>
           <div class="table-responsive">
-            <table class="table align-middle text-nowrap">
+            <table class="table align-middle text-nowrap table-center">
                 <thead>
                     <tr>
-                        <th class="text-dark font-medium fs-4">Equipe</th>
-                        <th class="text-dark font-medium fs-4">Status</th>
-                        <th class="text-dark font-medium fs-4">Points</th>
-                        <th class="text-dark font-medium fs-4">Victoire</th>
-                        <th class="text-dark font-medium fs-4">Défaite</th>
-                        <th class="text-dark font-medium fs-4">Nul</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Equipe</th>
+                       
+                        <th class="text-dark font-medium fs-4 td-meduim">Points</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Joués</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">V</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">D</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">N</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let group of groupG">
@@ -273,20 +286,22 @@
                         <td class="fs-4">
                             <h5 class="mb-0 font-medium">{{group.teamName}}</h5>
                         </td>
+                        
                         <td>
-                            <h5 class="mb-0 fw-normal">Status</h5>
+                            <h5 class="mb-0 fw-normal">{{group.cumulPoint}} </h5>
+                            
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{group.cumulPoint}} Points</h5>
+                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch +group.nbLossMatch +group.nbDrawMatch}}</h5>
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch}} Won</h5>
+                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch}} </h5>
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{group.nbLossMatch}} Loss</h5>
+                            <h5 class="mb-0 fw-normal">{{group.nbLossMatch}} </h5>
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{group.nbDrawMatch}} Draw</h5>
+                            <h5 class="mb-0 fw-normal">{{group.nbDrawMatch}} </h5>
                         </td>
                     </tr>              
                 </tbody>
@@ -299,15 +314,16 @@
           <h4 class="card-title">Groupes</h4>
           <h5 class="card-subtitle text-muted">Groupe H</h5>
           <div class="table-responsive">
-            <table class="table align-middle text-nowrap">
+            <table class="table align-middle text-nowrap table-center">
                 <thead>
                     <tr>
-                        <th class="text-dark font-medium fs-4">Equipe</th>
-                        <th class="text-dark font-medium fs-4">Status</th>
-                        <th class="text-dark font-medium fs-4">Points</th>
-                        <th class="text-dark font-medium fs-4">Victoire</th>
-                        <th class="text-dark font-medium fs-4">Défaite</th>
-                        <th class="text-dark font-medium fs-4">Nul</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Equipe</th>
+                       
+                        <th class="text-dark font-medium fs-4 td-meduim">Points</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">Joués</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">V</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">D</th>
+                        <th class="text-dark font-medium fs-4 td-meduim">N</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let group of groupH">
@@ -315,20 +331,21 @@
                         <td class="fs-4">
                             <h5 class="mb-0 font-medium">{{group.teamName}}</h5>
                         </td>
+                        
                         <td>
-                            <h5 class="mb-0 fw-normal">Status</h5>
+                            <h5 class="mb-0 fw-normal">{{group.cumulPoint}} </h5>
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{group.cumulPoint}} Points</h5>
+                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch +group.nbLossMatch +group.nbDrawMatch}}</h5>
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch}} Won</h5>
+                            <h5 class="mb-0 fw-normal">{{group.nbWonMatch}} </h5>
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{group.nbLossMatch}} Loss</h5>
+                            <h5 class="mb-0 fw-normal">{{group.nbLossMatch}} </h5>
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{group.nbDrawMatch}} Draw</h5>
+                            <h5 class="mb-0 fw-normal">{{group.nbDrawMatch}} </h5>
                         </td>
                     </tr>              
                 </tbody>

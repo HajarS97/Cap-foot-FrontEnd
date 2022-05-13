@@ -11,8 +11,7 @@ import { MatchService } from '../../../services/match.service';
 export class SuperviserComponent implements OnInit {
   match: Match  = {
     id: 0,
-    groupePhase: false,
-    directEliminationPhase: false,
+    stage: '',
     matchDate: new Date(),
     site: '',
     scoreHome: 0,
