@@ -8,31 +8,26 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand/logo -->
-  <a class="navbar-brand" >Logo</a>
-  
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/match">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/match">Matchs</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/group">Groups</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/component/table">Login</a>
-    </li>
-  </ul>
-</nav>
-
-
-
-</body>
-</html>
+  <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #39F;">
+    <a class="navbar-brand">Cap Du Monde</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/match">Matchs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/group">Groups</a>
+        </li>
+      </ul>
+      <div class="navbar-text">
+        <a class="nav-link" style="cursor: pointer; background-color: #5AF; border-radius: 5px; border: 2px solid #fff5; padding: 3px 20px 5px 20px;" routerLink="/component/login">Login</a>
+      </div>
+    </div>
+  </nav>

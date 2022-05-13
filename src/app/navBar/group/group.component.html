@@ -1,23 +1,24 @@
 <app-navBar></app-navBar>
-<div class="container">
-    <div class="card-body">
-        <!-- title -->
-        <h4 class="card-title">Capgemini foot</h4>
-        <h5 class="card-subtitle my-3">Liste des groupes</h5>
+<div class="containerX">
 
-        <!-- title -->
-        <div class="table-responsive">
+    <div style="margin: 40px 40px 20px 40px;">
+        <h4 class="card-title" style="color: #777;">Capgemini foot</h4>
+        <h5 class="card-subtitle my-2"  style="color: #39F;">Liste des groupes</h5>
+    </div>
+
+    <div style="margin: 40px 40px;">
+        <div class="table-responssive">
             <div class="row">
-                <div class="col-12">
-                    <div class="card">
+                <div class="col-md-6 col-12">
+                    <div class="card" style="margin-bottom: 20px;">
                         <div class="card-body">
-                            <h5 class="card-subtitle text-muted">Groupe A</h5>
+                            <h5 class="card-subtitle text-muted">Groupe A</h5><br>
                             <div class="table-responsive">
                                 <table class="table table-hover">
-                                    <thead class="thead-dark">
+                                    <thead style="background-color: #444; color: #eee;">
                                         <tr>
                                             <th scope="col">Equipe</th>
-                                            <th scope="col">Status</th>
+                                            <th scope="col">Statut</th>
                                             <th scope="col">Points</th>
                                             <th scope="col">Victoire</th>
                                             <th scope="col">Défaite</th>
@@ -38,16 +39,18 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="card">
+                <div class="col-md-6 col-12">
+                    <div class="card" style="margin-bottom: 20px;">
                         <div class="card-body">
-                            <h5 class="card-subtitle text-muted">Groupe B</h5>
+                            <h5 class="card-subtitle text-muted">Groupe B</h5><br>
                             <div class="table-responsive">
                                 <table class="table table-hover">
-                                    <thead class="thead-dark">
+                                    <thead style="background-color: #444; color: #eee;">
                                         <tr>
                                             <th scope="col">Equipe</th>
-                                            <th scope="col">Status</th>
+                                            <th scope="col">Statut</th>
                                             <th scope="col">Points</th>
                                             <th scope="col">Victoire</th>
                                             <th scope="col">Défaite</th>
@@ -67,191 +70,201 @@
                                 </table>
                             </div>
                         </div>
-
-
-                        <div class="card">
-                            <div class="card-body">
-
-                                <h5 class="card-subtitle text-muted">Groupe C</h5>
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead class="thead-dark">
-                                            <tr>
-                                                <th scope="col">Equipe</th>
-                                                <th scope="col">Status</th>
-                                                <th scope="col">Points</th>
-                                                <th scope="col">Victoire</th>
-                                                <th scope="col">Défaite</th>
-                                                <th scope="col">Nul</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr *ngFor='let group of groupC'>
-                                                <td>{{group.teamName}</td>
-                                                <td>{{Status}}</td>
-                                                <td>{{group.cumulPoint}}</td>
-                                                <td>{{group.nbWonMatch}}</td>
-                                                <td>{{group.nbLossMatch}}</td>
-                                                <td>{{group.nbDrawMatch}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                    </div>
+                </div>
+          
+                <div class="col-md-6 col-12">
+                    <div class="card" style="margin-bottom: 20px;">
+                        <div class="card-body">
+                            <h5 class="card-subtitle text-muted">Groupe C</h5><br>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead style="background-color: #444; color: #eee;">
+                                        <tr>
+                                            <th scope="col">Equipe</th>
+                                            <th scope="col">Statut</th>
+                                            <th scope="col">Points</th>
+                                            <th scope="col">Victoire</th>
+                                            <th scope="col">Défaite</th>
+                                            <th scope="col">Nul</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor='let group of groupC'>
+                                            <td>{{group.teamName}</td>
+                                            <td>{{Status}}</td>
+                                            <td>{{group.cumulPoint}}</td>
+                                            <td>{{group.nbWonMatch}}</td>
+                                            <td>{{group.nbLossMatch}}</td>
+                                            <td>{{group.nbDrawMatch}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
+                        </div>
+                    </div>
+                </div>
+      
+                <div class="col-md-6 col-12">
+                    <div class="card" style="margin-bottom: 20px;">
+                        <div class="card-body">
+                            <h5 class="card-subtitle text-muted">Groupe D</h5><br>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead style="background-color: #444; color: #eee;">
+                                        <tr>
+                                            <th scope="col">Equipe</th>
+                                            <th scope="col">Statut</th>
+                                            <th scope="col">Points</th>
+                                            <th scope="col">Victoire</th>
+                                            <th scope="col">Défaite</th>
+                                            <th scope="col">Nul</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor='let group of groupD'>
+                                            <td>{{group.teamName}</td>
+                                            <td>{{Status}}</td>
+                                            <td>{{group.cumulPoint}}</td>
+                                            <td>{{group.nbWonMatch}}</td>
+                                            <td>{{group.nbLossMatch}}</td>
+                                            <td>{{group.nbDrawMatch}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-md-6 col-12">
+                    <div class="card" style="margin-bottom: 20px;">
+                        <div class="card-body">
+                            <h5 class="card-subtitle text-muted">Groupe E</h5><br>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead style="background-color: #444; color: #eee;">
+                                        <tr>
+                                            <th scope="col">Equipe</th>
+                                            <th scope="col">Statut</th>
+                                            <th scope="col">Points</th>
+                                            <th scope="col">Victoire</th>
+                                            <th scope="col">Défaite</th>
+                                            <th scope="col">Nul</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor='let group of groupE'>
+                                            <td>{{group.teamName}</td>
+                                            <td>{{Status}}</td>
+                                            <td>{{group.cumulPoint}}</td>
+                                            <td>{{group.nbWonMatch}}</td>
+                                            <td>{{group.nbLossMatch}}</td>
+                                            <td>{{group.nbDrawMatch}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                            <div class="card">
-                                <div class="card-body">
+                <div class="col-md-6 col-12">
+                    <div class="card" style="margin-bottom: 20px;">
+                        <div class="card-body">
+                            <h5 class="card-subtitle text-muted">Groupe F</h5><br>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead style="background-color: #444; color: #eee;">
+                                        <tr>
+                                            <th scope="col">Equipe</th>
+                                            <th scope="col">Statut</th>
+                                            <th scope="col">Points</th>
+                                            <th scope="col">Victoire</th>
+                                            <th scope="col">Défaite</th>
+                                            <th scope="col">Nul</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor='let group of groupF'>
+                                            <td>{{group.teamName}</td>
+                                            <td>{{Status}}</td>
+                                            <td>{{group.cumulPoint}}</td>
+                                            <td>{{group.nbWonMatch}}</td>
+                                            <td>{{group.nbLossMatch}}</td>
+                                            <td>{{group.nbDrawMatch}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                    <h5 class="card-subtitle text-muted">Groupe D</h5>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <thead class="thead-dark">
-                                                <tr>
-                                                    <th scope="col">Equipe</th>
-                                                    <th scope="col">Status</th>
-                                                    <th scope="col">Points</th>
-                                                    <th scope="col">Victoire</th>
-                                                    <th scope="col">Défaite</th>
-                                                    <th scope="col">Nul</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr *ngFor='let group of groupD'>
-                                                    <td>{{group.teamName}</td>
-                                                    <td>{{Status}}</td>
-                                                    <td>{{group.cumulPoint}}</td>
-                                                    <td>{{group.nbWonMatch}}</td>
-                                                    <td>{{group.nbLossMatch}}</td>
-                                                    <td>{{group.nbDrawMatch}</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                <div class="col-md-6 col-12">
+                    <div class="card" style="margin-bottom: 20px;">
+                        <div class="card-body">
+                            <h5 class="card-subtitle text-muted">Groupe G</h5><br>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead style="background-color: #444; color: #eee;">
+                                        <tr>
+                                            <th scope="col">Equipe</th>
+                                            <th scope="col">Statut</th>
+                                            <th scope="col">Points</th>
+                                            <th scope="col">Victoire</th>
+                                            <th scope="col">Défaite</th>
+                                            <th scope="col">Nul</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor='let group of groupG'>
+                                            <td>{{group.teamName}</td>
+                                            <td>{{Status}}</td>
+                                            <td>{{group.cumulPoint}}</td>
+                                            <td>{{group.nbWonMatch}}</td>
+                                            <td>{{group.nbLossMatch}}</td>
+                                            <td>{{group.nbDrawMatch}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                <div class="card">
-                                    <div class="card-body">
-
-                                        <h5 class="card-subtitle text-muted">Groupe E</h5>
-                                        <div class="table-responsive">
-                                            <table class="table table-hover">
-                                                <thead class="thead-dark">
-                                                    <tr>
-                                                        <th scope="col">Equipe</th>
-                                                        <th scope="col">Status</th>
-                                                        <th scope="col">Points</th>
-                                                        <th scope="col">Victoire</th>
-                                                        <th scope="col">Défaite</th>
-                                                        <th scope="col">Nul</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr *ngFor='let group of groupE'>
-                                                        <td>{{group.teamName}</td>
-                                                        <td>{{Status}}</td>
-                                                        <td>{{group.cumulPoint}}</td>
-                                                        <td>{{group.nbWonMatch}}</td>
-                                                        <td>{{group.nbLossMatch}}</td>
-                                                        <td>{{group.nbDrawMatch}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                    <div class="card">
-                                        <div class="card-body">
-
-                                            <h5 class="card-subtitle text-muted">Groupe F</h5>
-                                            <div class="table-responsive">
-                                                <table class="table table-hover">
-                                                    <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col">Equipe</th>
-                                                            <th scope="col">Status</th>
-                                                            <th scope="col">Points</th>
-                                                            <th scope="col">Victoire</th>
-                                                            <th scope="col">Défaite</th>
-                                                            <th scope="col">Nul</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr *ngFor='let group of groupF'>
-                                                            <td>{{group.teamName}</td>
-                                                            <td>{{Status}}</td>
-                                                            <td>{{group.cumulPoint}}</td>
-                                                            <td>{{group.nbWonMatch}}</td>
-                                                            <td>{{group.nbLossMatch}}</td>
-                                                            <td>{{group.nbDrawMatch}</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-
-                                        <div class="card">
-                                            <div class="card-body">
-
-                                                <h5 class="card-subtitle text-muted">Groupe G</h5>
-                                                <div class="table-responsive">
-                                                    <table class="table table-hover">
-                                                        <thead class="thead-dark">
-                                                            <tr>
-                                                                <th scope="col">Equipe</th>
-                                                                <th scope="col">Status</th>
-                                                                <th scope="col">Points</th>
-                                                                <th scope="col">Victoire</th>
-                                                                <th scope="col">Défaite</th>
-                                                                <th scope="col">Nul</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr *ngFor='let group of groupG'>
-                                                                <td>{{group.teamName}</td>
-                                                                <td>{{Status}}</td>
-                                                                <td>{{group.cumulPoint}}</td>
-                                                                <td>{{group.nbWonMatch}}</td>
-                                                                <td>{{group.nbLossMatch}}</td>
-                                                                <td>{{group.nbDrawMatch}</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-
-                                            <div class="card">
-                                                <div class="card-body">
-
-                                                    <h5 class="card-subtitle text-muted">Groupe H</h5>
-                                                    <div class="table-responsive">
-                                                        <table class="table table-hover">
-                                                            <thead class="thead-dark">
-                                                                <tr>
-                                                                    <th scope="col">Equipe</th>
-                                                                    <th scope="col">Status</th>
-                                                                    <th scope="col">Points</th>
-                                                                    <th scope="col">Victoire</th>
-                                                                    <th scope="col">Défaite</th>
-                                                                    <th scope="col">Nul</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr *ngFor='let group of groupH'>
-                                                                    <td>{{group.teamName}</td>
-                                                                    <td>{{Status}}</td>
-                                                                    <td>{{group.cumulPoint}}</td>
-                                                                    <td>{{group.nbWonMatch}}</td>
-                                                                    <td>{{group.nbLossMatch}}</td>
-                                                                    <td>{{group.nbDrawMatch}</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
+                <div class="col-md-6 col-12">
+                    <div class="card" style="margin-bottom: 20px;">
+                        <div class="card-body">
+                            <h5 class="card-subtitle text-muted">Groupe H</h5><br>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead style="background-color: #444; color: #eee;">
+                                        <tr>
+                                            <th scope="col">Equipe</th>
+                                            <th scope="col">Statut</th>
+                                            <th scope="col">Points</th>
+                                            <th scope="col">Victoire</th>
+                                            <th scope="col">Défaite</th>
+                                            <th scope="col">Nul</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor='let group of groupH'>
+                                            <td>{{group.teamName}</td>
+                                            <td>{{Status}}</td>
+                                            <td>{{group.cumulPoint}}</td>
+                                            <td>{{group.nbWonMatch}}</td>
+                                            <td>{{group.nbLossMatch}}</td>
+                                            <td>{{group.nbDrawMatch}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>                        
+            </div>
+        </div>
+    </div>
+</div>
