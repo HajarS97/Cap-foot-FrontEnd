@@ -26,7 +26,7 @@ export class championshipDetailComponent implements OnInit{
   };
 
   message = '';
-  etats: any = ['INSCRIPTION', 'GROUPE', 'QUART_FINAL', 'DEMI_FINAL', 'FINAL'];
+  etats: any = ['INSCRIPTION', 'GROUPE','LAST_SIXTEEN', 'QUART_FINAL', 'DEMI_FINAL', 'FINAL'];
 
   constructor(
     private championShipService: ChampionShipService,
