@@ -1,4 +1,4 @@
-import { Team } from "./team.module";
+import { Team } from "./team.model";
 
 export interface Match{
     id : number,

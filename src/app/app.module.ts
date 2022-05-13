@@ -25,6 +25,7 @@ import { LoginComponent } from './login/login.component';
 import { NavBarComponent } from './navBar/navBar.component';
 import { MatchComponent } from './navBar/match/match.component';
 import { GroupComponent } from './navBar/group/group.component';
+import { AddTeamComponent } from './component/add-team/add-team.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -46,7 +47,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LoginComponent,
     NavBarComponent,
     MatchComponent,
-    GroupComponent
+    GroupComponent,
+    AddTeamComponent
   ],
   imports: [
     CommonModule,
