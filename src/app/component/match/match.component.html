@@ -10,6 +10,26 @@
                 <tbody *ngFor='let match of matchs'>
                     <tr *ngIf="match.stage ==  champion.statut">
                         <td class="d-none">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th class="text-dark font-medium fs-4">ID</th>
+                        <th class="text-dark font-medium fs-4">Phase</th>
+                        <th class="text-dark font-medium fs-4">Date de Match</th>
+                        <th class="text-dark font-medium fs-4">Site</th>
+                        <th class="text-dark font-medium fs-4">Team Home</th>
+                        <th class="text-dark font-medium fs-4">Team Away</th>
+                        <th class="text-dark font-medium fs-4">Score Team Home</th>
+                        <th class="text-dark font-medium fs-4">Score Team Away</th>
+                        <th class="text-dark font-medium fs-4">Score Match</th>
+                        <th class="text-dark font-medium fs-4">Etat de Match</th>
+                        <th class="text-dark font-medium fs-4"></th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let match of matchs'>
+                        <td>
                             <div class="d-flex align-items-center">
                                 <div class="ms-3">
                                     <h5  class="mb-0 font-medium">{{match.id}}</h5>
@@ -19,6 +39,13 @@
                         <td class="divBody divHeader">
                             <h5 class="mb-0 fw-normal paddingPerso">Phase : {{match.stage}}</h5>
                             <h5 class="mb-0 fw-normal paddingPerso"></h5>
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{match.stage}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal">{{match.matchDate}}</h5>
+                        </td>
+                        <td>
                             <h5 class="mb-0 fw-normal">{{match.site}}</h5>
                         </td>
                         <td class="align-items-center">
