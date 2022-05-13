@@ -9,3 +9,6 @@ export interface Player {
     available: boolean
 
 }
+
+}
+
