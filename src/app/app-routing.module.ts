@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddTeamComponent } from './component/add-team/add-team.component';
 
 import { FullComponent } from './layouts/full/full.component';
 
 export const Approutes: Routes = [
+  {
+    path: 'inscription',
+    component: AddTeamComponent
+  },
   {
     path: '',
     component: FullComponent,

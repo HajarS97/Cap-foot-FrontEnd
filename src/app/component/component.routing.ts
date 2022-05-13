@@ -10,6 +10,7 @@ import { CardsComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
 import { MatchComponent } from './match/match.component';
 import { SuperviserComponent } from './match/superviser/superviser.component';
+import { AddTeamComponent } from './add-team/add-team.component';
 
 
 export const ComponentsRoutes: Routes = [
