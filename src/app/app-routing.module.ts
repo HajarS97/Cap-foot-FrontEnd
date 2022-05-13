@@ -8,6 +8,14 @@ import { MatchComponent } from './navBar/match/match.component';
 import { NavBarComponent } from './navBar/navBar.component';
 
 export const Approutes: Routes = [
+  { 
+    path: 'login', 
+    component: LoginComponent 
+  },
+  { 
+    path: 'register', 
+    component: RegisterComponent 
+  },
   {
     path:'navBar',
     component : NavBarComponent
@@ -30,10 +38,7 @@ export const Approutes: Routes = [
         path: 'dashboard',
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       },
-      { path: 'login', 
-        component: LoginComponent },
-      { path: 'register', 
-        component: RegisterComponent },
+      
       {
         path: 'about',
         loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
