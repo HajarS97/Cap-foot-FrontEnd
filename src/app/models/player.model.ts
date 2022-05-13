@@ -1,4 +1,5 @@
 export interface Player {
+
     fullName: string,
     emailAddress: string,
     cin: string,
@@ -6,4 +7,8 @@ export interface Player {
     startingPlayer: boolean,
     captain: boolean,
     available: boolean
+
 }
+
+}
+

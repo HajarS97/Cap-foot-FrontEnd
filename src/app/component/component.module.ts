@@ -8,12 +8,13 @@ import { ComponentsRoutes } from './component.routing';
 import { NgbdpaginationBasicComponent } from './pagination/pagination.component';
 import { addChampionComponent } from './addChampion/addChampion.component';
 import { NgbdDropdownBasicComponent } from './dropdown-collapse/dropdown-collapse.component';
-import { NgbdnavBasicComponent } from './nav/nav.component';
+import { championshipDetailComponent } from './championshipDetail/championship-detail.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from "./table/table.component";
 import { MatchComponent } from './match/match.component';
 import { SuperviserComponent } from './match/superviser/superviser.component';
+import { GroupComponent } from './group/group/group.component';
 
 
 @NgModule({
@@ -22,18 +23,20 @@ import { SuperviserComponent } from './match/superviser/superviser.component';
     RouterModule.forChild(ComponentsRoutes),
     FormsModule,
     ReactiveFormsModule,
-    NgbModule,
+    NgbModule
   ],
+  
   declarations: [
     NgbdpaginationBasicComponent,
     addChampionComponent,
     NgbdDropdownBasicComponent,
-    NgbdnavBasicComponent,
+    championshipDetailComponent,
     ButtonsComponent,
     CardsComponent,
     TableComponent,
     MatchComponent,
-    SuperviserComponent
+    SuperviserComponent,
+    GroupComponent
   ]
 })
 export class ComponentsModule { }

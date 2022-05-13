@@ -5,5 +5,4 @@ export interface Team {
     name: string,
     site: string,
     players : Player[],
-
 }

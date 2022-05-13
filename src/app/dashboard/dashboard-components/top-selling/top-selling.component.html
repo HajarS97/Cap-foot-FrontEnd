@@ -14,6 +14,7 @@
                         <th class="text-dark font-medium fs-4">Date fin</th>
                         <th class="text-dark font-medium fs-4">Etat</th>
                         <th class="text-dark font-medium fs-4">progress</th>
+                        <th class="text-dark font-medium fs-4">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,12 +36,17 @@
                             <h5 class="mb-0 fw-normal">{{champion.statut}}</h5>
                         </td>
                         <td>
+                            
                             <h5 class="mb-0 fw-normal">{{champion.progress}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal">
+                                <a routerLink="/component/championDetail/{{ champion.id }}">Modifier <i class="fas fa-edit"></i></a>
+                            </h5>
                         </td>
                     </tr>              
                 </tbody>
             </table>
         </div>
     </div>
-    
 </div>

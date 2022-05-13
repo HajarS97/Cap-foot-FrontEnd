@@ -7,7 +7,7 @@
       <div class="p-3">
         <h4 class="card-title mb-0">Ajouter ChampionShip</h4>
       </div>
-      <div class="col-lg-12">
+      <div class="col-lg-12" style="margin: 5% 0%;">
         <div>
           <div class="submit-form">
             <div *ngIf="!submitted">
@@ -45,9 +45,18 @@
                 />
               </div>
               <br>
+              <div class="form-group" style="display: flex;">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Progress  </label>
+                <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+                 [checked]="champion.progress"
+                 [(ngModel)]="champion.progress" name="progress" id="progress" style="margin-left: 10%;">
+                </div>
+              </div>
+              <br>
               <div class="form-group">
               <select
-              class="custom-select mb-3"
+              class="form-select mb-3"
               [(ngModel)]="champion.statut"
               name="etat">
               <option value="">Etat</option>
@@ -60,7 +69,7 @@
             </div>
             <div *ngIf="submitted">
               <h4>ChampionShip was submitted successfully!</h4>
-              <button class="btn btn-success" (click)="newChampion()">Ajouter</button>
+              <button class="btn btn-success" (click)="backChampionSip()">Retour à la liste</button>
             </div>
           </div>
         </div>

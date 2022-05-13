@@ -4,8 +4,8 @@
                 <h4 class="card-title">Capgemini foot</h4>
                 <h5 class="card-subtitle">Match : {{match.id}}</h5>
 
-                <div>
-                    Team Home : <span><Strong>{{match.teamHome?.name}}</Strong></span>  <span style="margin-left: 10px; margin-right: 10px; font-size: large;">  VS  </span>  Team Away : <span><Strong>{{match.teamAway?.name}}</Strong></span>
+                <div style="text-align: center; margin-bottom: 5%;">
+                    <span class="teams" ><Strong>{{match.teamHome?.name}}</Strong></span>  <span style="margin-left: 10px; margin-right: 10px; font-size: large;">  <span class="score">  {{match.scoreHome}} : {{match.scoreAway}}  </span>  </span>  <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span>
                     
                 </div>
 
@@ -13,9 +13,10 @@
                     <table class="table align-middle">
                         <thead>
                             <tr>
-                                <th class="text-dark font-medium fs-4">Score Team Home</th>
-                                <th class="text-dark font-medium fs-4">Score Team Away</th>
-                                <th class="text-dark font-medium fs-4"></th>
+                                <th class="text-dark font-medium fs-4">{{match.teamHome?.name}}</th>
+                                <th class="text-dark font-medium fs-4">{{match.teamAway?.name}}</th>
+                                <th class="text-dark font-medium fs-4">Date de Match</th>
+                                <th class="text-dark font-medium fs-4">Etat de Match</th>
                                 
                             </tr>
                         </thead>
@@ -28,7 +29,20 @@
                                     <input class="mb-0 fw-normal" [(ngModel)]="match.scoreAway">
                                 </td>
                                 <td>
-                                    <h5 class="mb-0 fw-normal"><button class="btn btn-success" (click)="updateScore(match.id, match)">Update Score</button></h5>
+                                    <input type="date" class="mb-0 fw-normal" [(ngModel)]="match.matchDate">
+                                </td>
+                                <td>
+                                    <h5 class="mb-0 fw-normal">
+                                        <select class="form-control" [(ngModel)]='match.matchState' class="form-select" aria-label="Default select example">
+                                            <option *ngFor=" let state of states" selected [value]="state.name">{{state.front}}</option>
+                                          </select>
+                                    </h5>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5 class="mb-0 fw-normal"><button class="btn btn-primary" (click)="updateScore(match.id, match)">Update Score</button></h5>
                                 </td>
                             </tr>              
                         </tbody>
