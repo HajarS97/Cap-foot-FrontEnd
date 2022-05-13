@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class GroupService {
 
-  public host:string="http://localhost:8082/"
+  public host:string="http://localhost:8082/api/v1/groupes/dto/"
 
   constructor(private http:HttpClient) { }
 

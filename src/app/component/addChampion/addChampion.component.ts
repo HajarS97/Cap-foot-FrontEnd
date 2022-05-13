@@ -29,7 +29,7 @@ export class addChampionComponent implements OnInit {
     progress: false
   };
   submitted = false;
-  etats: any = ['INSCRIPTION', 'GROUPE', 'QUART_FINAL', 'DEMI_FINAL', 'FINAL'];
+  etats: any = ['INSCRIPTION','GROUPE','LAST_SIXTEEN', 'QUART_FINAL', 'DEMI_FINAL', 'FINAL'];
   constructor(private championService: ChampionShipService, private router: Router) {}
 
   ngOnInit(): void {

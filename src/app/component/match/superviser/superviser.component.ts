@@ -6,13 +6,12 @@ import { MatchService } from '../../../services/match.service';
 @Component({
   selector: 'app-superviser',
   templateUrl: './superviser.component.html',
-  styleUrls: ['./superviser.component.scss']
+  styleUrls: ['./superviser.component.css']
 })
 export class SuperviserComponent implements OnInit {
   match: Match  = {
     id: 0,
-    groupePhase: false,
-    directEliminationPhase: false,
+    stage: "",
     matchDate: new Date(),
     site: '',
     scoreHome: 0,

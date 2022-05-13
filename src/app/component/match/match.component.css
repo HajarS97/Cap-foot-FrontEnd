@@ -1,0 +1,30 @@
+.divBody{
+    margin-top: 2%;
+    margin-right: 4%;
+    padding: 0.4rem;
+}
+
+.divHeader{
+    padding: 0.4rem;
+}
+
+.score{
+    padding: 2.3rem;
+    font-size: 1.7rem;
+}
+
+.teams{
+    font-size: 1.3rem;
+}
+
+.btnSup{
+    margin: 2% 2%;
+}
+
+.paddingPerso{
+    padding-bottom: 1%;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #3970ee !important;
+}

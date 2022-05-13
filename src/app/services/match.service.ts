@@ -21,6 +21,7 @@ export class MatchService {
   }
 
   updateMatchScore(id: number, match: Match){
+    
     return this.http.put('http://localhost:8082/api/v1/admin/matchs/score/'+id, match)
   }
 }

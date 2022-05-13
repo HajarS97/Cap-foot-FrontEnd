@@ -6,67 +6,41 @@
             
         <!-- title -->
         <div class="table-responsive">
-            <table class="table align-middle">
-                <thead>
-                    <tr>
-                        <th class="text-dark font-medium fs-4">ID</th>
-                        <th class="text-dark font-medium fs-4">Phase de Groupe</th>
-                        <th class="text-dark font-medium fs-4">Phase de Elimination</th>
-                        <th class="text-dark font-medium fs-4">Date de Match</th>
-                        <th class="text-dark font-medium fs-4">Site</th>
-                        <th class="text-dark font-medium fs-4">Team Home</th>
-                        <th class="text-dark font-medium fs-4">Team Away</th>
-                        <th class="text-dark font-medium fs-4">Score Team Home</th>
-                        <th class="text-dark font-medium fs-4">Score Team Away</th>
-                        <th class="text-dark font-medium fs-4">Score Match</th>
-                        <th class="text-dark font-medium fs-4">Etat de Match</th>
-                        <th class="text-dark font-medium fs-4"></th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor='let match of matchs'>
-                        <td>
+            <table class="table align-middle"  *ngFor="let champion of champion">
+                <tbody *ngFor='let match of matchs'>
+                    <tr *ngIf="match.stage ==  champion.statut">
+                        <td class="d-none">
                             <div class="d-flex align-items-center">
                                 <div class="ms-3">
-                                    <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                    <h5  class="mb-0 font-medium">{{match.id}}</h5>
                                 </div>
                             </div>
                         </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">{{match.groupePhase}}</h5>
-                        </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">{{match.directEliminationPhase}}</h5>
-                        </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">{{match.matchDate}}</h5>
-                        </td>
-                        <td>
+                        <td class="divBody divHeader">
+                            <h5 class="mb-0 fw-normal paddingPerso">Phase : {{match.stage}}</h5>
                             <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                        <td></td>
+                        <td>
+                            
+                        </td>
+                        <td class="align-items-center">
+                            <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>  
+                            <span class="score">  {{match.scoreHome}} : {{match.scoreAway}}  </span>  
+                            <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                            <h5 *ngIf=" match.matchState == states[0].name" class="mb-0 fw-normal paddingPerso" style="margin-left: 15%; font-size: small;"><Strong>{{states[0].front}}</Strong></h5>
+                            <h5 *ngIf="match.matchState == states[1].name" class="mb-0 fw-normal paddingPerso" style="margin-left: 18%; font-size: small;"><Strong>{{states[1].front}}</Strong></h5>
+                            <h5 *ngIf= "match.matchState == states[2].name" class="mb-0 fw-normal paddingPerso" style="margin-left: 21%; font-size: small;"><Strong>{{states[2].front}}</Strong></h5>
+                            <h5 *ngIf="match.matchState == states[3].name" class="mb-0 fw-normal paddingPerso" style="margin-left: 20%; font-size: small;"><Strong>{{states[3].front}}</Strong></h5>
+                            <span *ngIf="match.matchDate" style="margin-left: 19.5%; margin-top:3%;">{{match.matchDate}}</span>
+                            <span *ngIf="!match.matchDate" style="margin-left: 17%; margin-top:3%;">Date non définie</span>
+
                         </td>
                         <td>
-                            <h5 class="mb-0 fw-normal">{{match.teamHome?.name}}</h5>
+                            <button class="btn btn-primary btn-small input-block-level form-control btnSup" (click)="superviser(match.id)">Superviser</button>
                         </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">{{match.teamAway?.name}}</h5>
-                        </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal" >{{match.scoreHome}}</h5>
-                        </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">{{match.scoreAway}}</h5>
-                        </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">{{match.scoreHome}} : {{match.scoreAway}}</h5>
-                        </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal">{{match.matchState}}</h5>
-                        </td>
-                        <td>
-                            <h5 class="mb-0 fw-normal"><button class="btn btn-success" (click)="superviser(match.id)">Superviser</button></h5>
-                        </td>
-                    </tr>              
+                    </tr> 
+                
+                    <tr></tr>             
                 </tbody>
             </table>
         </div>
