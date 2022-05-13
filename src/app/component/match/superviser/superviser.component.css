@@ -1,0 +1,11 @@
+.score{
+    padding: 1rem;
+    font-size: 1.7rem;
+}
+
+.teams{
+    font-size: 2rem;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #507eea !important;
+}
