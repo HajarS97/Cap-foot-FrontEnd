@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 export const Approutes: Routes = [
   {
@@ -13,6 +15,10 @@ export const Approutes: Routes = [
         path: 'dashboard',
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       },
+      { path: 'login', 
+        component: LoginComponent },
+      { path: 'register', 
+        component: RegisterComponent },
       {
         path: 'about',
         loadChildren: () => import('./about/about.module').then(m => m.AboutModule)

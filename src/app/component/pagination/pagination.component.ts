@@ -15,4 +15,5 @@ pagecustom = 4;
 getPageSymbol(current: number) {
 return ['A', 'B', 'C', 'D', 'E', 'F', 'G'][current - 1];
 }
+
 }

@@ -1,7 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Champion } from '../models/champion.model';
 import { Observable } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -13,23 +17,23 @@ export class ChampionShipService {
 
   getChampions(): Observable<Champion[]>{
     let apiChampions = this.host+"/getall";
-    return this.http.get<Champion[]>(apiChampions);
+    return this.http.get<Champion[]>(apiChampions, httpOptions);
   }
 
   getChampion(id: any): Observable<Champion>{
     let apiChampion = this.host+`/${id}`;
     console.log(apiChampion);
-    return this.http.get<Champion>(apiChampion);
+    return this.http.get<Champion>(apiChampion, httpOptions);
   }
 
   createChampion(data: any): Observable<any> {
     let addChampion = this.host+"/add";
-    return this.http.post(addChampion, data);
+    return this.http.post(addChampion, data, httpOptions);
   }
   
   updateChampion(data: any): Observable<any> {
     let updateChampion = this.host+"/update";
-    return this.http.put(`${updateChampion}`, data);
+    return this.http.put(`${updateChampion}`, data, httpOptions);
   }
 
   deleteChampionship(id:number):Observable<any> {
