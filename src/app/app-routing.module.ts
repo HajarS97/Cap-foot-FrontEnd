@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { AddTeamComponent } from './component/add-team/add-team.component';
-
 import { FullComponent } from './layouts/full/full.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';

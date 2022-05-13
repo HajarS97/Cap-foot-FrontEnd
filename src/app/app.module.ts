@@ -19,9 +19,6 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
-import { AddTeamComponent } from './component/add-team/add-team.component';
-
-
 import { ToastrModule } from 'ngx-toastr';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { RegisterComponent } from './register/register.component';
@@ -30,6 +27,7 @@ import { NavBarComponent } from './navBar/navBar.component';
 import { MatchComponent } from './navBar/match/match.component';
 import { GroupComponent } from './navBar/group/group.component';
 import { AddTeamComponent } from './component/add-team/add-team.component';
+import { TeamService } from './services/team.service';
 
 
 

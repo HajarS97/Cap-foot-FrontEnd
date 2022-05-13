@@ -7,17 +7,8 @@ import { Player } from '../models/player.model';
   providedIn: 'root'
 })
 
-
-import { Injectable } from '@angular/core';
-
-import { Observable } from 'rxjs';
-import { Player } from '../models/player.model';
-
-
 @Injectable({
-
   providedIn: 'root'
-
 })
 
 
@@ -32,11 +23,6 @@ export class PlayerService {
     let apiPlayers = this.host+"/all";
     return this.http.get<Player[]>(apiPlayers);
   }
-
-    let apiPlayers = this.host+"/all";
-
-    return this.http.get<Player[]>(apiPlayers);
-
-  }
+    
 
 }

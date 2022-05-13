@@ -9,30 +9,47 @@ import { MatchService } from '../../../services/match.service';
   styleUrls: ['./superviser.component.css']
 })
 export class SuperviserComponent implements OnInit {
+
   match: Match  = {
+
     id: 0,
+
     stage: "",
+
     matchDate: new Date(),
     site: '',
+
     scoreHome: 0,
+
     scoreAway: 0,
+
     matchState: "match non commencé",
+
     teamHome: {
+
       id: 0,
+
       name: "",
+
       site: "",
+
       players: []
+
+
 
     },
+
     teamAway: {
+
       id: 0,
+
       name: "",
+
       site: "",
+
       players: []
 
-    } 
-
-    
+    }
   };
 
   states = [
