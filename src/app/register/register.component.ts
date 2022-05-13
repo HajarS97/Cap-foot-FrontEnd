@@ -17,8 +17,6 @@ export class RegisterComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
-  //roles: any = ["utilisateur", "admin"];
-
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {

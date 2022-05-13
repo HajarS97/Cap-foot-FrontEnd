@@ -41,7 +41,6 @@ export const Approutes: Routes = [
     children: [
 
 
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
       { path: '', redirectTo: '/login', pathMatch: 'full' },
       {
         path: 'dashboard',
