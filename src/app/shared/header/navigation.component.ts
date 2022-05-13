@@ -2,6 +2,7 @@ import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TokenStorageService } from '../../_services/token-storage.service';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -22,7 +23,7 @@ export class NavigationComponent implements AfterViewInit {
   showModeratorBoard = false;
   username?: string;
 
-  constructor(private modalService: NgbModal, private tokenStorageService: TokenStorageService) {
+  constructor(private modalService: NgbModal, private tokenStorageService: TokenStorageService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -136,6 +137,10 @@ export class NavigationComponent implements AfterViewInit {
 
   logout(): void {
     this.tokenStorageService.signOut();
-    window.location.reload();
+    this.backlogin();
+  }
+
+  backlogin(): void{
+    this.router.navigateByUrl('/login');
   }
 }
