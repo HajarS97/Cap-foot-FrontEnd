@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Match } from '../../../models/match.module';
+import { Match } from '../../../models/match.model';
 import { MatchService } from '../../../services/match.service';
 
 @Component({
@@ -21,18 +21,14 @@ export class SuperviserComponent implements OnInit {
       id: 0,
       name: "",
       site: "",
-      players_id : 0,
-      nbPlayers: 0,
-      groupTeam_id: 0
+      players: []
 
     },
     teamAway: {
       id: 0,
       name: "",
       site: "",
-      players_id : 0,
-      nbPlayers: 0,
-      groupTeam_id: 0
+      players: []
 
     } 
 

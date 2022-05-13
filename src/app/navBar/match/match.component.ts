@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChampionShipService } from '../../services/champion-ship.service';
-import { Match } from '../../models/match.module';
+import { Match } from '../../models/match.model';
 import { MatchService } from '../../services/match.service';
 import { Champion } from '../..//models/champion.model';
 
@@ -25,6 +25,7 @@ export class MatchComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllMatchs();
+    this.getChampions();
   }
 
   getAllMatchs(){

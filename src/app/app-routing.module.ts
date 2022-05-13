@@ -6,8 +6,13 @@ import { RegisterComponent } from './register/register.component';
 import { GroupComponent } from './navBar/group/group.component';
 import { MatchComponent } from './navBar/match/match.component';
 import { NavBarComponent } from './navBar/navBar.component';
+import { AddTeamComponent } from './component/add-team/add-team.component';
 
 export const Approutes: Routes = [
+  {
+    path: 'inscription',
+    component: AddTeamComponent
+  },
   { 
     path: 'login', 
     component: LoginComponent 
