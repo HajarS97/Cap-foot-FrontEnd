@@ -18,7 +18,6 @@
                                     <thead style="background-color: #444; color: #eee;">
                                         <tr>
                                             <th scope="col">Equipe</th>
-                                            <th scope="col">Statut</th>
                                             <th scope="col">Points</th>
                                             <th scope="col">Victoire</th>
                                             <th scope="col">Défaite</th>
@@ -28,7 +27,6 @@
                                     <tbody>
                                         <tr *ngFor='let group of groupA'>
                                             <td>{{group.teamName}</td>
-                                            <td>{{Status}}</td>
                                             <td>{{group.cumulPoint}}</td>
                                             <td>{{group.nbWonMatch}}</td>
                                             <td>{{group.nbLossMatch}}</td>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ChampionShipService } from '../../services/champion-ship.service';
 import { Match } from '../../models/match.module';
 import { MatchService } from '../../services/match.service';
+import { Champion } from '../..//models/champion.model';
 
 @Component({
   selector: 'app-match',
@@ -10,8 +12,16 @@ import { MatchService } from '../../services/match.service';
 export class MatchComponent implements OnInit {
 
   matchs : Match[] = [];
+  champion?:Champion[] = [];
 
-  constructor(private matchService :MatchService) { }
+  states = [
+    {id:0, name: "PENDING", front:"Match non commencé" },
+    {id:1, name: "START",  front: "Début de match"},
+    {id:2, name: "HALF" , front: "Mi-Temps"},
+    {id:3, name: "END", front:"Fin de match" },
+  ];
+
+  constructor(private matchService :MatchService, private championshipService: ChampionShipService) { }
 
   ngOnInit(): void {
     this.getAllMatchs();
@@ -23,6 +33,13 @@ export class MatchComponent implements OnInit {
         this.matchs = data;
       }
     )
+  }
+
+  getChampions(){
+    this.championshipService.getChampions().subscribe((data:Champion[])=>{
+      this.champion = data
+      console.log(this.champion)
+    });
   }
 
 }
