@@ -11,28 +11,18 @@ import { MatchService } from '../../../services/match.service';
 export class SuperviserComponent implements OnInit {
 
   match: Match  = {
-
     id: 0,
-
     stage: "",
-
     matchDate: new Date(),
     site: '',
-
     scoreHome: 0,
-
     scoreAway: 0,
-
     matchState: "match non commencé",
-
     teamHome: {
-
       id: 0,
-
       name: "",
-
       site: "",
-
+      stage: "",
       players: []
 
 
@@ -40,15 +30,11 @@ export class SuperviserComponent implements OnInit {
     },
 
     teamAway: {
-
       id: 0,
-
       name: "",
-
       site: "",
-
+      stage: "",
       players: []
-
     }
   };
 

@@ -56,7 +56,23 @@
                 </tbody>
             </table>
         </div>
+        <div class="row" *ngIf="teamWinner">
+            <!-- column -->
+            <div class="col-lg-3 col-md-6">
+                <!-- Card -->
+                <div class="card bg-info text-white">
+                <div class="card-body">
+                    <h4 class="card-title text-white">L'équipe vainqueur : </h4>
+                    <span class="card-text" style="font-size: 2rem;">
+                       <strong> {{teamWinner.name}} </strong>
+                    </span>
+                </div>
+                </div>
+                <!-- Card -->
+            </div>
+        </div>
     </div>
+
 
     <!-- Delete Modal-->
   

@@ -3,6 +3,8 @@ import { NotificationsService } from '../../../services/notifications.service';
 import { Champion } from '../../../models/champion.model';
 import { ChampionShipService } from '../../../services/champion-ship.service';
 import { Router } from '@angular/router';
+import { TeamService } from '../../../services/team.service';
+import { Team } from '../../../models/team.model';
 
 @Component({
   selector: 'app-championship',
@@ -18,14 +20,22 @@ idToDelete?: number;
 inProgress?:boolean;
 currentIndex = -1;
 currentChampion: Champion = {};
+teamWinner: Team = {
+  name: '',
+  site: '',
+  stage: '',
+  players: []
+};
 
   constructor(private championshipService: ChampionShipService,
               private notification:NotificationsService,
-              private router: Router) { }
+              private router: Router,
+              private teamsSertvice: TeamService) { }
 
   ngOnInit(): void {
     this.getAllChampions();
     console.log("id", this.showModal);
+    this.getWinnerTeam()
   }
 
   getAllChampions(): void{
@@ -39,6 +49,16 @@ currentChampion: Champion = {};
     });
   }
 
+  getWinnerTeam(){
+    this.teamsSertvice.getTeams().subscribe((data:Team[]) => {
+      data.forEach((Element:Team) => {
+        if(Element.stage == "WINNER"){
+            this.teamWinner = Element;
+            console.log(this.teamWinner.name)
+        }
+      })
+    })
+  }
   refreshList(): void {
     this.getAllChampions();
     this.currentChampion = {};

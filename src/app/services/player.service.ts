@@ -14,7 +14,7 @@ import { Player } from '../models/player.model';
 
 export class PlayerService {
 
-  public host:string="http://localhost:8082/api/v1/players/dto"
+  public host:string="http://localhost:8082/api/v2/players"
 
   constructor(private http:HttpClient) { }
 
