@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Team } from '../models/team.model';
 import { Observable } from 'rxjs';
 
+
+
 @Injectable({  providedIn: 'root'})
 
 export class TeamService {  
@@ -22,8 +24,5 @@ export class TeamService { 
         let apiTeams = this.host+id;
         return this.http.get<any>(apiTeams);
       }
-    
-    
 }
-
 

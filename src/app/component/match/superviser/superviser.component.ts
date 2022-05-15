@@ -9,6 +9,7 @@ import { MatchService } from '../../../services/match.service';
   styleUrls: ['./superviser.component.css']
 })
 export class SuperviserComponent implements OnInit {
+
   match: Match  = {
     id: 0,
     stage: "",
@@ -24,17 +25,17 @@ export class SuperviserComponent implements OnInit {
       stage: "",
       players: []
 
+
+
     },
+
     teamAway: {
       id: 0,
       name: "",
       site: "",
       stage: "",
       players: []
-
-    } 
-
-    
+    }
   };
 
   states = [

@@ -13,6 +13,7 @@ export const Approutes: Routes = [
     path: 'inscription',
     component: AddTeamComponent
   },
+
   { 
     path: 'login', 
     component: LoginComponent 
@@ -33,13 +34,13 @@ export const Approutes: Routes = [
     path:'group',
     component : GroupComponent
   },
+
   {
     path: '',
     component: FullComponent,
     children: [
 
 
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
       { path: '', redirectTo: '/login', pathMatch: 'full' },
       {
         path: 'dashboard',
