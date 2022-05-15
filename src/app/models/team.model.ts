@@ -5,6 +5,7 @@ export interface Team {
     id?: number,
     name: string,
     site: string,
+    stage: string,
     players : Player[],
 
 

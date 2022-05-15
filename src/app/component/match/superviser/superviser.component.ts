@@ -21,6 +21,7 @@ export class SuperviserComponent implements OnInit {
       id: 0,
       name: "",
       site: "",
+      stage: "",
       players: []
 
     },
@@ -28,6 +29,7 @@ export class SuperviserComponent implements OnInit {
       id: 0,
       name: "",
       site: "",
+      stage: "",
       players: []
 
     } 

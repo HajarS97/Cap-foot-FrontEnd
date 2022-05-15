@@ -94,6 +94,7 @@ export class AddTeamComponent implements OnInit {
     {
       name: '',
       site: '',
+      stage:"",
       players: []
     }
   ];
