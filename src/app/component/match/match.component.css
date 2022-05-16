@@ -13,6 +13,11 @@
     font-size: 1.7rem;
 }
 
+.scoreR{
+    padding: 1.4rem;
+    font-size: 1.7rem;
+}
+
 .teams{
     font-size: 1.3rem;
 }
@@ -22,9 +27,69 @@
 }
 
 .paddingPerso{
-    padding-bottom: 1%;
+    top: 100%;
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: #3970ee !important;
+}
+
+.mydivouter{
+    position:relative;
+    margin: 1% auto;
+    padding: 2.5%;
+    background-color: rgb(237, 237, 237);
+    border-radius: 6px;
+    }
+
+
+.mydivoverlap{
+    position: relative;
+    z-index: 1;
+}
+.mybuttonoverlap{
+	position: absolute;
+    top: 17%;
+    display: none;
+    left: 40%;	
+}
+.mydivouter:hover .mybuttonoverlap{ 
+    background: rgb(0 0 0 / 60%);
+    z-index: 9;
+    display: inline;
+}
+
+.scoreInput{
+    margin-left: 10px; margin-right: 10px; font-size: large; width: 30px; border: none; border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.overlay-match {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+    background: rgb(0 0 0 / 60%);
+    z-index: 9;
+}
+
+.text-match {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 45px;
+    margin: auto;
+    left: 0;
+    top: 0;
+    width: 45px;
+    background: no-repeat center url(data:image/svg+xml;charset=utf8,%3Csvg aria-hidden='true' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' %3E%3Cpath fill='%23fff' d='M256,0C114.617,0,0,114.615,0,256s114.617,256,256,256s256-114.615,256-256S397.383,0,256,0z M344.48,269.57l-128,80 c-2.59,1.617-5.535,2.43-8.48,2.43c-2.668,0-5.34-0.664-7.758-2.008C195.156,347.172,192,341.82,192,336V176 c0-5.82,3.156-11.172,8.242-13.992c5.086-2.836,11.305-2.664,16.238,0.422l128,80c4.676,2.93,7.52,8.055,7.52,13.57 S349.156,266.641,344.48,269.57z' class=''%3E%3C/path%3E%3C/svg%3E);
+}
+
+::ng-deep .modal .modal-dialog { 
+    max-width: 950px !important ; 
+    margin: 10.75rem auto;
 }
