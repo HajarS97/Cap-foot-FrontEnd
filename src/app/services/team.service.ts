@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 @Injectable({  providedIn: 'root'})
 
 export class TeamService {  
-  public host:string="http://localhost:8082/api/v1/teams"  
+  public host:string="http://localhost:8082/api/v2/teams"  
   
   constructor(private http:HttpClient) { }  
   

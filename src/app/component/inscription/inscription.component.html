@@ -1,0 +1,111 @@
+<div style="background-color: teal;">
+    <div class="row" style="width: 70%;margin: 0 auto;">
+        <div class="col-lg-12" style="margin-top: 20px;">
+            <div class="card w-100">
+                <div class="col-lg-12">
+                    <form #addForm="ngForm" (ngSubmit)="onAddTeam()" ngNativeValidate class="submit-form">
+                        <div class="mt-3">
+                            <h3 style="text-align:center;">Equipe Informations</h3>
+                            <hr/>
+                        <div class="form-group">
+                            <label for="name" style="margin-bottom: 4px;">Nom d'équipe</label>
+                            <input type="text" style="margin-bottom: 4px;" [(ngModel)]="team[0].name" name="name_team" class="form-control" id="name_team" placeholder="Nom d'équipe" required>
+                        </div>
+                     <div class="form-group">
+                        <label for="site" style="margin-bottom: 4px;">Site</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"  [(ngModel)]="team[0].site" name="flexRadioDefault" id="flexRadioDefault1" value="CASABLANCA" [checked]="true">
+                            <label>Casablanca</label>
+                        </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio"  [(ngModel)]="team[0].site" name="flexRadioDefault" id="flexRadioDefault2" value="RABAT" [checked]="true">
+                            <label>Rabat</label>
+                          </div>
+                    </div>
+                    </div>
+                        <br>
+                        <h3 style="text-align:center;">Joueurs Informations </h3>
+                    <hr/>
+                    <div *ngIf="list_players.length < 7">
+                        <h4 style="font-style:italic; margin-top: 8px; margin-bottom: 8px;">{{ fields[i] }}</h4>
+                   <span *ngIf="((emails_check.indexOf(email) > -1) || (cin_check.indexOf(cin) > -1)  || (phone_check.indexOf(phone) > -1)) " style="color : red;font-style: oblique;">Ce joueur est déjà affecté à une autre équipe</span>
+                        <div class="form-group">
+                            <label for="name" style="margin-bottom: 4px;">Nom Complet</label>
+                            <input type="text" [(ngModel)]="fullName" style="margin-bottom: 4px;"  name="name_j1" class="form-control" id="name_j1" placeholder="Nom Complet" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" style="margin-bottom: 4px;">Adresse Email</label>
+                            <input type="email"  [(ngModel)]="email" style="margin-bottom: 4px;"  name="email_j1" class="form-control" id="email_j1" placeholder="Email" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cin" style="margin-bottom: 4px;">CIN</label>
+                            <input type="text" [(ngModel)]="cin" style="margin-bottom: 4px;"  name="cin_j1" class="form-control" id="cin_j1" placeholder="CIN" >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Phone" style="margin-bottom: 4px;">Numéro de téléphone</label>
+                            <input type="text" [(ngModel)]="phone" style="margin-bottom: 4px;"  name="phone_j1" class="form-control" id="phone_j1" placeholder="Numéro de téléphone" >
+                        </div>
+                    </div>
+
+                    <div class="modal-footer" *ngIf="list_players.length < 7">
+                        <input type="button" [disabled]="((emails_check.indexOf(email) > -1) || (cin_check.indexOf(cin) > -1)  || (phone_check.indexOf(phone) > -1)) " value="Ajouter Joueur" style="color: #fff; background-color: teal; border-color: teal;" (click)="onAddPlayer()" class="btn btn-primary">
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-subtitle text-muted">Liste des joueurs</h5>
+                          <div class="table-responsive">
+                            <table class="table align-middle text-nowrap table-center">
+                                <thead>
+                                    <tr>
+                                        <th class="text-dark font-medium fs-4 td-meduim">Joueur</th>
+                                        <th class="text-dark font-medium fs-4 td-meduim">Nom Complet</th>
+                                        <th class="text-dark font-medium fs-4 td-meduim">Email Address</th>
+                                        <th class="text-dark font-medium fs-4 td-meduim">CIN</th>
+                                        <th class="text-dark font-medium fs-4 td-meduim">Phone</th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let list of list_players;let j = index">
+                                    <tr>
+                                        <td class="fs-4">
+                                            <h5 class="mb-0 font-medium">{{ fields2[j] }}</h5>
+                                        </td>
+
+                                        <td class="fs-4">
+                                            <h5 class="mb-0 font-medium">{{list_players[j].fullName}}</h5>
+                                        </td>
+                                        
+                                        <td>
+                                            <h5 class="mb-0 fw-normal">{{list_players[j].emailAddress}}</h5>
+                                        </td>
+                                        <td>
+                                            <h5 class="mb-0 fw-normal">{{list_players[j].phone}}</h5>
+                                        </td>
+                                        <td>
+                                            <h5 class="mb-0 fw-normal">{{list_players[j].cin}}</h5>
+                                        </td>
+                                        
+                                    </tr>              
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                        </div>
+                        
+                      </div>
+                    
+                        
+                        <div class="modal-footer">
+                            <button style="color: #fff;
+                            background-color: teal;
+                            border-color: teal;" [disabled]="(list_players.length<7)"  type="submit" class="btn btn-primary">S'inscrire</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

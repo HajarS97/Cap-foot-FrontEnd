@@ -4,9 +4,9 @@ export interface Player {
     emailAddress: string,
     cin: string,
     phone: string,
-    startingPlayer: boolean,
-    captain: boolean,
-    available: boolean
+    startingPlayer?: boolean,
+    captain?: boolean,
+    available?: boolean
 
 }
 
