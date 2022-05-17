@@ -55,14 +55,9 @@
                                             définie</span>
 
                                     </div>
-                                    <div class="col-md-4">
-                                        <button class="btn btn-primary btnSup mybuttonoverlap "
-                                            (click)="open(content); superviser(match.id)">Superviser</button>
-                                    </div>
-
-                                    <div class="overlay-match">
-                                        <button class="btn btn-primary btnSup mybuttonoverlap "
-                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    <div class="col-md-4 overlay-match">
+                                        <div class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</div>
                                     </div>
                                 </div>
                             </div>
@@ -475,14 +470,9 @@
                                             définie</span>
 
                                     </div>
-                                    <div class="col-md-4">
-                                        <button class="btn btn-primary btnSup mybuttonoverlap "
-                                            (click)="open(content); superviser(match.id)">Superviser</button>
-                                    </div>
-
-                                    <div class="overlay-match">
-                                        <button class="btn btn-primary btnSup mybuttonoverlap "
-                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    <div class="col-md-4 overlay-match">
+                                        <div class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</div>
                                     </div>
                                 </div>
                             </div>
@@ -505,7 +495,7 @@
                             </div>
                             <div class="align-items-center col-md-4">
                                 <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
-                                <span class="score"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                <span class="scoreR"> {{match.scoreHome}} : {{match.scoreAway}} </span>
                                 <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
                                 <h5 *ngIf=" match.matchState == states[0].name" class="mb-0 fw-normal paddingPerso"
                                     style="margin-left: 22%; font-size: small;">
@@ -529,14 +519,10 @@
                                     définie</span>
 
                             </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-primary btnSup mybuttonoverlap "
-                                    (click)="open(content); superviser(match.id)">Superviser</button>
-                            </div>
 
-                            <div class="overlay-match">
-                                <button class="btn btn-primary btnSup mybuttonoverlap "
-                                    (click)="open(content); superviser(match.id)">Superviser</button>
+                            <div class="col-md-4 overlay-match">
+                                <div class="btn btn-primary btnSup mybuttonoverlap "
+                                    (click)="open(content); superviser(match.id)">Superviser</div>
                             </div>
                         </div>
                     </div>
@@ -550,7 +536,7 @@
 <ng-template #content let-modal>
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">
-            Geeks of Geeks
+            Mise à de match
         </h4>
         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
 
@@ -564,7 +550,7 @@
             <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span> <span class="score">
                 <input class="scoreInput" [(ngModel)]="match.scoreHome"> : <input class="scoreInput"
                     [(ngModel)]="match.scoreAway"></span>
-            <Strong>{{match.teamAway?.name}}</Strong>
+                    <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span>
 
         </div>
         <div class="table-responsive">
