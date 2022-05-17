@@ -15,6 +15,7 @@ import { TableComponent } from "./table/table.component";
 import { MatchComponent } from './match/match.component';
 import { SuperviserComponent } from './match/superviser/superviser.component';
 import { GroupComponent } from './group/group/group.component';
+import { GamesComponent } from './games/games.component';
 
 
 
@@ -37,7 +38,8 @@ import { GroupComponent } from './group/group/group.component';
     TableComponent,
     MatchComponent,
     SuperviserComponent,
-    GroupComponent
+    GroupComponent,
+    GamesComponent
   ]
 })
 export class ComponentsModule { }

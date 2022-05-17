@@ -1,0 +1,94 @@
+.divBody{
+    margin-top: 2%;
+    margin-right: 4%;
+    padding: 0.4rem;
+}
+
+.divHeader{
+    padding: 0.4rem;
+}
+
+.score{
+    padding: 2.3rem;
+    font-size: 1.7rem;
+}
+
+.scoreR{
+    padding: 1.4rem;
+    font-size: 1.7rem;
+}
+
+.teams{
+    font-size: 1.3rem;
+}
+
+.btnSup{
+    margin: 2% 2%;
+}
+
+.paddingPerso{
+    top: 100%;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #3970ee !important;
+}
+
+.mydivouter{
+    position:relative;
+    margin: 1% auto;
+    padding: 2.5%;
+    background-color: rgb(237, 237, 237);
+    border-radius: 6px;
+    }
+
+
+.mydivoverlap{
+    position: relative;
+    z-index: 1;
+}
+.mybuttonoverlap{
+	position: absolute;
+    top: 17%;
+    display: none;
+    left: 40%;	
+}
+.mydivouter:hover .overlay-match{ 
+    opacity: 0.5;
+    display: inline;
+}
+.scoreInput{
+    margin-left: 10px; margin-right: 10px; font-size: large; width: 30px; border: none; border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.overlay-match {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+    border-radius: 6px;
+    background: rgb(0 0 0 / 60%);
+    z-index: 9;
+}
+
+.text-match {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 45px;
+    margin: auto;
+    left: 0;
+    top: 0;
+    width: 45px;
+    background: no-repeat center;
+}
+
+::ng-deep .modal .modal-dialog { 
+    max-width: 950px !important ; 
+    margin: 10.75rem auto;
+}

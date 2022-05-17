@@ -26,5 +26,13 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+  {
+    path: '/component/games',
+    title: 'Games',
+    icon: 'bi bi-list-ol',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
   
 ];

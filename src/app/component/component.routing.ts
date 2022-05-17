@@ -15,6 +15,7 @@ import { AddTeamComponent } from './add-team/add-team.component';
 
 import { GroupComponent } from './group/group/group.component';
 import { NavBarComponent } from '../navBar/navBar.component';
+import { GamesComponent } from './games/games.component';
 
 
 
@@ -45,8 +46,12 @@ export const ComponentsRoutes: Routes = [
 			{
 				path: 'match',
 				component: MatchComponent
-      },
-      {
+      		},
+			  {
+				path: 'games',
+				component: GamesComponent
+      		},
+      		{
 				path: 'addChampion',
 				component: addChampionComponent
 			},

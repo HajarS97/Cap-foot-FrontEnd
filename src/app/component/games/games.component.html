@@ -1,0 +1,742 @@
+<div class="card">
+    <div class="card-body">
+        <!-- title -->
+        <h4 class="card-title">Capgemini foot</h4>
+        <h5 class="card-subtitle">Liste des Matchs</h5>
+        <div class="SelectStage" style="width: 30%;">
+            <select class="form-select" aria-label="Default select example" (change)="selectStage($event.target.value)">
+                <option value="GROUPE" selected>Groupes</option>
+                <option value="LAST_SIXTEEN">16 Final</option>
+                <option value="QUART_FINAL">Quatre Final</option>
+                <option value="DEMI_FINAL">Demi Final</option>
+                <option value="FINAL">Final</option>
+              </select>
+        </div>
+        
+
+        <!-- title -->
+        <div class="container">
+            
+                <div *ngIf="stage== 'GROUPE'">
+                    <br>
+                    <h5 class="card-subtitle text-muted"><strong> Les matchs de groupe A</strong></h5><br>
+                    <div *ngFor="let group of groupA">
+                        <div *ngFor='let match of matchs'>
+                            <div *ngIf="match.teamHome.name == group.teamName">
+                                <div *ngIf=" match.stage == 'GROUPE'" class="mydivouter row">
+                                    <div class="d-none">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ms-3">
+                                                <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 paddingPerso">
+                                        <h5 class="mb-0 fw-normal "> Groupes</h5>
+                                        <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                                    </div>
+                                    <div class="align-items-center col-md-4">
+                                        <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
+                                        <span class="score"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                        <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                                        <h5 *ngIf=" match.matchState == states[0].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 22%; font-size: small;">
+                                            <Strong>{{states[0].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[1].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 30%; font-size: small;">
+                                            <Strong>{{states[1].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[2].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 38%; font-size: small;">
+                                            <Strong>{{states[2].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[3].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 35%; font-size: small;">
+                                            <Strong>{{states[3].front}}</Strong>
+                                        </h5>
+                                        <span *ngIf="match.matchDate"
+                                            style="margin-left: 35%; margin-top:3%;">{{match.matchDate}}</span>
+                                        <span *ngIf="!match.matchDate" style="margin-left: 24%; margin-top:3%;">Date non
+                                            définie</span>
+
+                                    </div>
+                                    <div class="col-md-4 overlay-match">
+                                        <div class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h5 class="card-subtitle text-muted"><strong> Les matchs de groupe B</strong></h5><br>
+                    <div *ngFor="let group of groupB">
+                        <div *ngFor='let match of matchs'>
+                            <div *ngIf="match.teamHome.name == group.teamName">
+                                <div *ngIf="match.stage =='GROUPE'" class="mydivouter row">
+                                    <div class="d-none">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ms-3">
+                                                <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 paddingPerso">
+                                        <h5 class="mb-0 fw-normal "> {{stage}}</h5>
+                                        <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                                    </div>
+                                    <div class="align-items-center col-md-4">
+                                        <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
+                                        <span class="score"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                        <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                                        <h5 *ngIf=" match.matchState == states[0].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 22%; font-size: small;">
+                                            <Strong>{{states[0].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[1].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 30%; font-size: small;">
+                                            <Strong>{{states[1].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[2].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 38%; font-size: small;">
+                                            <Strong>{{states[2].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[3].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 35%; font-size: small;">
+                                            <Strong>{{states[3].front}}</Strong>
+                                        </h5>
+                                        <span *ngIf="match.matchDate"
+                                            style="margin-left: 35%; margin-top:3%;">{{match.matchDate}}</span>
+                                        <span *ngIf="!match.matchDate" style="margin-left: 24%; margin-top:3%;">Date non
+                                            définie</span>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    </div>
+
+                                    <div class="overlay-match">
+                                        <button class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h5 class="card-subtitle text-muted"><strong> Les matchs de groupe C</strong></h5><br>
+                    <div *ngFor="let group of groupC">
+                        <div *ngFor='let match of matchs'>
+                            <div *ngIf="match.teamHome.name == group.teamName">
+                                <div *ngIf="match.stage =='GROUPE'" class="mydivouter row">
+                                    <div class="d-none">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ms-3">
+                                                <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 paddingPerso">
+                                        <h5 class="mb-0 fw-normal "> {{stage}}</h5>
+                                        <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                                    </div>
+                                    <div class="align-items-center col-md-4">
+                                        <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
+                                        <span class="score"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                        <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                                        <h5 *ngIf=" match.matchState == states[0].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 22%; font-size: small;">
+                                            <Strong>{{states[0].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[1].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 30%; font-size: small;">
+                                            <Strong>{{states[1].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[2].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 38%; font-size: small;">
+                                            <Strong>{{states[2].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[3].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 35%; font-size: small;">
+                                            <Strong>{{states[3].front}}</Strong>
+                                        </h5>
+                                        <span *ngIf="match.matchDate"
+                                            style="margin-left: 35%; margin-top:3%;">{{match.matchDate}}</span>
+                                        <span *ngIf="!match.matchDate" style="margin-left: 24%; margin-top:3%;">Date non
+                                            définie</span>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    </div>
+
+                                    <div class="overlay-match">
+                                        <button class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h5 class="card-subtitle text-muted"><strong> Les matchs de groupe D</strong></h5><br>
+                    <div *ngFor="let group of groupD">
+                        <div *ngFor='let match of matchs'>
+                            <div *ngIf="match.teamHome.name == group.teamName">
+                                <div *ngIf="match.stage =='GROUPE'" class="mydivouter row">
+                                    <div class="d-none">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ms-3">
+                                                <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 paddingPerso">
+                                        <h5 class="mb-0 fw-normal "> {{stage}}</h5>
+                                        <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                                    </div>
+                                    <div class="align-items-center col-md-4">
+                                        <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
+                                        <span class="score"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                        <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                                        <h5 *ngIf=" match.matchState == states[0].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 22%; font-size: small;">
+                                            <Strong>{{states[0].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[1].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 30%; font-size: small;">
+                                            <Strong>{{states[1].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[2].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 38%; font-size: small;">
+                                            <Strong>{{states[2].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[3].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 35%; font-size: small;">
+                                            <Strong>{{states[3].front}}</Strong>
+                                        </h5>
+                                        <span *ngIf="match.matchDate"
+                                            style="margin-left: 35%; margin-top:3%;">{{match.matchDate}}</span>
+                                        <span *ngIf="!match.matchDate" style="margin-left: 24%; margin-top:3%;">Date non
+                                            définie</span>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    </div>
+
+                                    <div class="overlay-match">
+                                        <button class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h5 class="card-subtitle text-muted"><strong> Les matchs de groupe E</strong></h5><br>
+                    <div *ngFor="let group of groupE">
+                        <div *ngFor='let match of matchs'>
+                            <div *ngIf="match.teamHome.name == group.teamName">
+                                <div *ngIf="match.stage =='GROUPE'" class="mydivouter row">
+                                    <div class="d-none">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ms-3">
+                                                <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 paddingPerso">
+                                        <h5 class="mb-0 fw-normal "> {{stage}}</h5>
+                                        <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                                    </div>
+                                    <div class="align-items-center col-md-4">
+                                        <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
+                                        <span class="scoreR"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                        <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                                        <h5 *ngIf=" match.matchState == states[0].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 22%; font-size: small;">
+                                            <Strong>{{states[0].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[1].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 30%; font-size: small;">
+                                            <Strong>{{states[1].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[2].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 38%; font-size: small;">
+                                            <Strong>{{states[2].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[3].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 35%; font-size: small;">
+                                            <Strong>{{states[3].front}}</Strong>
+                                        </h5>
+                                        <span *ngIf="match.matchDate"
+                                            style="margin-left: 35%; margin-top:3%;">{{match.matchDate}}</span>
+                                        <span *ngIf="!match.matchDate" style="margin-left: 24%; margin-top:3%;">Date non
+                                            définie</span>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    </div>
+
+                                    <div class="overlay-match">
+                                        <button class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h5 class="card-subtitle text-muted"><strong> Les matchs de groupe F</strong></h5><br>
+                    <div *ngFor="let group of groupF">
+                        <div *ngFor='let match of matchs'>
+                            <div *ngIf="match.teamHome.name == group.teamName">
+                                <div *ngIf="match.stage =='GROUPE'" class="mydivouter row">
+                                    <div class="d-none">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ms-3">
+                                                <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 paddingPerso">
+                                        <h5 class="mb-0 fw-normal "> {{stage}}</h5>
+                                        <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                                    </div>
+                                    <div class="align-items-center col-md-4">
+                                        <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
+                                        <span class="scoreR"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                        <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                                        <h5 *ngIf=" match.matchState == states[0].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 22%; font-size: small;">
+                                            <Strong>{{states[0].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[1].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 30%; font-size: small;">
+                                            <Strong>{{states[1].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[2].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 38%; font-size: small;">
+                                            <Strong>{{states[2].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[3].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 35%; font-size: small;">
+                                            <Strong>{{states[3].front}}</Strong>
+                                        </h5>
+                                        <span *ngIf="match.matchDate"
+                                            style="margin-left: 35%; margin-top:3%;">{{match.matchDate}}</span>
+                                        <span *ngIf="!match.matchDate" style="margin-left: 24%; margin-top:3%;">Date non
+                                            définie</span>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    </div>
+
+                                    <div class="overlay-match">
+                                        <button class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h5 class="card-subtitle text-muted"><strong> Les matchs de groupe G</strong></h5><br>
+                    <div *ngFor="let group of groupG">
+                        <div *ngFor='let match of matchs'>
+                            <div *ngIf="match.teamHome.name == group.teamName">
+                                <div *ngIf="match.stage =='GROUPE'" class="mydivouter row">
+                                    <div class="d-none">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ms-3">
+                                                <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 paddingPerso">
+                                        <h5 class="mb-0 fw-normal "> {{stage}}</h5>
+                                        <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                                    </div>
+                                    <div class="align-items-center col-md-4">
+                                        <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
+                                        <span class="scoreR"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                        <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                                        <h5 *ngIf=" match.matchState == states[0].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 22%; font-size: small;">
+                                            <Strong>{{states[0].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[1].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 30%; font-size: small;">
+                                            <Strong>{{states[1].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[2].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 38%; font-size: small;">
+                                            <Strong>{{states[2].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[3].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 35%; font-size: small;">
+                                            <Strong>{{states[3].front}}</Strong>
+                                        </h5>
+                                        <span *ngIf="match.matchDate"
+                                            style="margin-left: 35%; margin-top:3%;">{{match.matchDate}}</span>
+                                        <span *ngIf="!match.matchDate" style="margin-left: 24%; margin-top:3%;">Date non
+                                            définie</span>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    </div>
+
+                                    <div class="overlay-match">
+                                        <button class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h5 class="card-subtitle text-muted"><strong> Les matchs de groupe H</strong></h5><br>
+                    <div *ngFor="let group of groupH">
+                        <div *ngFor='let match of matchs'>
+                            <div *ngIf="match.teamHome.name == group.teamName">
+                                <div *ngIf="match.stage =='GROUPE'" class="mydivouter row">
+                                    <div class="d-none">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ms-3">
+                                                <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 paddingPerso">
+                                        <h5 class="mb-0 fw-normal "> {{stage}}</h5>
+                                        <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                                    </div>
+                                    <div class="align-items-center col-md-4">
+                                        <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
+                                        <span class="scoreR"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                        <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                                        <h5 *ngIf=" match.matchState == states[0].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 22%; font-size: small;">
+                                            <Strong>{{states[0].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[1].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 30%; font-size: small;">
+                                            <Strong>{{states[1].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[2].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 38%; font-size: small;">
+                                            <Strong>{{states[2].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[3].name"
+                                            class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 35%; font-size: small;">
+                                            <Strong>{{states[3].front}}</Strong>
+                                        </h5>
+                                        <span *ngIf="match.matchDate"
+                                            style="margin-left: 35%; margin-top:3%;">{{match.matchDate}}</span>
+                                        <span *ngIf="!match.matchDate" style="margin-left: 24%; margin-top:3%;">Date non
+                                            définie</span>
+
+                                    </div>
+                                    <div class="col-md-4 overlay-match">
+                                        <div class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="stage == 'LAST_SIXTEEN'">
+                    <div *ngFor="let match of matchs ">
+                        <div *ngIf="stage == 'LAST_SIXTEEN' && match.stage == 'LAST_SIXTEEN' " class="mydivouter row">
+                            <div class="d-none">
+                                <div class="d-flex align-items-center">
+                                    <div class="ms-3">
+                                        <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 paddingPerso">
+                                <h5 class="mb-0 fw-normal "> 8ÈMES DE FINALE </h5>
+                                <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                            </div>
+                            <div class="align-items-center col-md-4">
+                                <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
+                                <span class="scoreR"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                                <h5 *ngIf=" match.matchState == states[0].name" class="mb-0 fw-normal paddingPerso"
+                                    style="margin-left: 22%; font-size: small;">
+                                    <Strong>{{states[0].front}}</Strong>
+                                </h5>
+                                <h5 *ngIf="match.matchState == states[1].name" class="mb-0 fw-normal paddingPerso"
+                                    style="margin-left: 30%; font-size: small;">
+                                    <Strong>{{states[1].front}}</Strong>
+                                </h5>
+                                <h5 *ngIf="match.matchState == states[2].name" class="mb-0 fw-normal paddingPerso"
+                                    style="margin-left: 38%; font-size: small;">
+                                    <Strong>{{states[2].front}}</Strong>
+                                </h5>
+                                <h5 *ngIf="match.matchState == states[3].name" class="mb-0 fw-normal paddingPerso"
+                                    style="margin-left: 35%; font-size: small;">
+                                    <Strong>{{states[3].front}}</Strong>
+                                </h5>
+                                <span *ngIf="match.matchDate"
+                                    style="margin-left: 35%; margin-top:3%;">{{match.matchDate}}</span>
+                                <span *ngIf="!match.matchDate" style="margin-left: 24%; margin-top:3%;">Date non
+                                    définie</span>
+
+                            </div>
+
+                            <div class="col-md-4 overlay-match">
+                                <div class="btn btn-primary btnSup mybuttonoverlap "
+                                    (click)="open(content); superviser(match.id)">Superviser</div>
+                            </div>
+                        </div>
+                        </div>  
+                    </div>
+                    <div *ngIf="stage == 'QUART_FINAL'">
+                        <div *ngFor="let match of matchs ">
+                            <div *ngIf="stage == 'QUART_FINAL' && match.stage == 'QUART_FINAL' " class="mydivouter row">
+                                <div class="d-none">
+                                    <div class="d-flex align-items-center">
+                                        <div class="ms-3">
+                                            <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 paddingPerso">
+                                    <h5 class="mb-0 fw-normal "> QUARTS DE FINALES</h5>
+                                    <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                                </div>
+                                <div class="align-items-center col-md-4">
+                                    <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
+                                    <span class="scoreR"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                    <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                                    <h5 *ngIf=" match.matchState == states[0].name" class="mb-0 fw-normal paddingPerso"
+                                        style="margin-left: 22%; font-size: small;">
+                                        <Strong>{{states[0].front}}</Strong>
+                                    </h5>
+                                    <h5 *ngIf="match.matchState == states[1].name" class="mb-0 fw-normal paddingPerso"
+                                        style="margin-left: 30%; font-size: small;">
+                                        <Strong>{{states[1].front}}</Strong>
+                                    </h5>
+                                    <h5 *ngIf="match.matchState == states[2].name" class="mb-0 fw-normal paddingPerso"
+                                        style="margin-left: 38%; font-size: small;">
+                                        <Strong>{{states[2].front}}</Strong>
+                                    </h5>
+                                    <h5 *ngIf="match.matchState == states[3].name" class="mb-0 fw-normal paddingPerso"
+                                        style="margin-left: 35%; font-size: small;">
+                                        <Strong>{{states[3].front}}</Strong>
+                                    </h5>
+                                    <span *ngIf="match.matchDate"
+                                        style="margin-left: 35%; margin-top:3%;">{{match.matchDate}}</span>
+                                    <span *ngIf="!match.matchDate" style="margin-left: 24%; margin-top:3%;">Date non
+                                        définie</span>
+    
+                                </div>
+    
+                                <div class="col-md-4 overlay-match">
+                                    <div class="btn btn-primary btnSup mybuttonoverlap "
+                                        (click)="open(content); superviser(match.id)">Superviser</div>
+                                </div>
+                            </div>
+                            </div>  
+                        </div>
+                        <div *ngIf="stage == 'DEMI_FINAL'">
+                            <div *ngFor="let match of matchs ">
+                                <div *ngIf="stage == 'DEMI_FINAL' && match.stage == 'DEMI_FINAL' " class="mydivouter row">
+                                    <div class="d-none">
+                                        <div class="d-flex align-items-center">
+                                            <div class="ms-3">
+                                                <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 paddingPerso">
+                                        <h5 class="mb-0 fw-normal "> DEMI-FINALES</h5>
+                                        <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                                    </div>
+                                    <div class="align-items-center col-md-4">
+                                        <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
+                                        <span class="scoreR"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                        <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                                        <h5 *ngIf=" match.matchState == states[0].name" class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 22%; font-size: small;">
+                                            <Strong>{{states[0].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[1].name" class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 30%; font-size: small;">
+                                            <Strong>{{states[1].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[2].name" class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 38%; font-size: small;">
+                                            <Strong>{{states[2].front}}</Strong>
+                                        </h5>
+                                        <h5 *ngIf="match.matchState == states[3].name" class="mb-0 fw-normal paddingPerso"
+                                            style="margin-left: 35%; font-size: small;">
+                                            <Strong>{{states[3].front}}</Strong>
+                                        </h5>
+                                        <span *ngIf="match.matchDate"
+                                            style="margin-left: 35%; margin-top:3%;">{{match.matchDate}}</span>
+                                        <span *ngIf="!match.matchDate" style="margin-left: 24%; margin-top:3%;">Date non
+                                            définie</span>
+        
+                                    </div>
+        
+                                    <div class="col-md-4 overlay-match">
+                                        <div class="btn btn-primary btnSup mybuttonoverlap "
+                                            (click)="open(content); superviser(match.id)">Superviser</div>
+                                    </div>
+                                </div>
+                                </div>  
+                            </div>
+                            <div *ngIf="stage == 'FINAL'">
+                                <div *ngFor="let match of matchs ">
+                                    <div *ngIf="stage == 'FINAL' && match.stage == 'FINAL' " class="mydivouter row">
+                                        <div class="d-none">
+                                            <div class="d-flex align-items-center">
+                                                <div class="ms-3">
+                                                    <h5 class="mb-0 font-medium">{{match.id}}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 paddingPerso">
+                                            <h5 class="mb-0 fw-normal "> FINALES</h5>
+                                            <h5 class="mb-0 fw-normal">{{match.site}}</h5>
+                                        </div>
+                                        <div class="align-items-center col-md-4">
+                                            <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span>
+                                            <span class="scoreR"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                                            <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span> <br>
+                                            <h5 *ngIf=" match.matchState == states[0].name" class="mb-0 fw-normal paddingPerso"
+                                                style="margin-left: 22%; font-size: small;">
+                                                <Strong>{{states[0].front}}</Strong>
+                                            </h5>
+                                            <h5 *ngIf="match.matchState == states[1].name" class="mb-0 fw-normal paddingPerso"
+                                                style="margin-left: 30%; font-size: small;">
+                                                <Strong>{{states[1].front}}</Strong>
+                                            </h5>
+                                            <h5 *ngIf="match.matchState == states[2].name" class="mb-0 fw-normal paddingPerso"
+                                                style="margin-left: 38%; font-size: small;">
+                                                <Strong>{{states[2].front}}</Strong>
+                                            </h5>
+                                            <h5 *ngIf="match.matchState == states[3].name" class="mb-0 fw-normal paddingPerso"
+                                                style="margin-left: 35%; font-size: small;">
+                                                <Strong>{{states[3].front}}</Strong>
+                                            </h5>
+                                            <span *ngIf="match.matchDate"
+                                                style="margin-left: 35%; margin-top:3%;">{{match.matchDate}}</span>
+                                            <span *ngIf="!match.matchDate" style="margin-left: 24%; margin-top:3%;">Date non
+                                                définie</span>
+            
+                                        </div>
+            
+                                        <div class="col-md-4 overlay-match">
+                                            <div class="btn btn-primary btnSup mybuttonoverlap "
+                                                (click)="open(content); superviser(match.id)">Superviser</div>
+                                        </div>
+                                    </div>
+                                    </div>  
+                                </div>
+                </div>
+            </div>
+        </div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">
+            Mise à de match
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+
+            <span aria-hidden="true">
+                ×
+            </span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div style="text-align: center; margin-bottom: 5%;">
+            <span class="teams"><Strong>{{match.teamHome?.name}}</Strong></span> <span class="score">
+                <input class="scoreInput" [(ngModel)]="match.scoreHome"> : <input class="scoreInput"
+                    [(ngModel)]="match.scoreAway"></span>
+                    <span class="teams"><Strong>{{match.teamAway?.name}}</Strong></span>
+
+        </div>
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th class="text-dark font-medium fs-4">Date de Match</th>
+                        <th class="text-dark font-medium fs-4">Etat de Match</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="date" class="mb-0 fw-normal" [(ngModel)]="match.matchDate">
+                        </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal">
+                                <select class="form-control" [(ngModel)]='match.matchState' class="form-select"
+                                    aria-label="Default select example">
+                                    <option *ngFor=" let state of states" selected [value]="state.name">{{state.front}}
+                                    </option>
+                                </select>
+                            </h5>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark"
+            (click)="modal.close('Save click'); updateMatch(match.id, match)">
+            Update
+        </button>
+    </div>
+</ng-template>
