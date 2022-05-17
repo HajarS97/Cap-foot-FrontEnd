@@ -28,6 +28,7 @@ import { MatchComponent } from './navBar/match/match.component';
 import { GroupComponent } from './navBar/group/group.component';
 import { AddTeamComponent } from './component/add-team/add-team.component';
 import { TeamService } from './services/team.service';
+import { InscriptionComponent } from './component/inscription/inscription.component';
 
 
 
@@ -51,7 +52,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NavBarComponent,
     MatchComponent,
     GroupComponent,
-    AddTeamComponent
+    AddTeamComponent,
+    InscriptionComponent
   ],
   imports: [
     CommonModule,
