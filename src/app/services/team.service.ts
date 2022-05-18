@@ -13,7 +13,7 @@ export class TeamService { 
   constructor(private http:HttpClient) { }  
   
   getTeams(): Observable<Team[]>{
-        let apiTeams = this.host+"/all";   
+        let apiTeams = "http://localhost:8082/api/v1/teams/all";   
      return this.http.get<Team[]>(apiTeams);  }  
      
   createTeam(data: Team){   
