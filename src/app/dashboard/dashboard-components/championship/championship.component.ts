@@ -35,7 +35,7 @@ teamWinner: Team = {
   ngOnInit(): void {
     this.getAllChampions();
     console.log("id", this.showModal);
-    this.getWinnerTeam()
+    this.getWinnerTeam();
   }
 
   getAllChampions(): void{
@@ -54,7 +54,7 @@ teamWinner: Team = {
       data.forEach((Element:Team) => {
         if(Element.stage == "WINNER"){
             this.teamWinner = Element;
-            console.log(this.teamWinner.name)
+            console.log("test")
         }
       })
     })

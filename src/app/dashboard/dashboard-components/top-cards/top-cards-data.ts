@@ -10,25 +10,25 @@ export const topcards: topcard[] = [
     {
         bgcolor: 'success',
         icon: 'bi bi-wallet',
-        title: '0',
+        title: '8',
         subtitle: 'Groupes'
     },
     {
         bgcolor: 'danger',
         icon: 'bi bi-wallet',
-        title: '0',
+        title: '32',
         subtitle: 'Equipes'
     },
     {
         bgcolor: 'warning',
         icon: 'bi bi-wallet',
-        title: '0',
+        title: '63',
         subtitle: 'Matches'
     },
     {
         bgcolor: 'info',
         icon: 'bi bi-wallet',
-        title: '0',
+        title: '224',
         subtitle: 'Joueurs'
     },
 
