@@ -1,33 +1,443 @@
 <app-navBar></app-navBar>
 
-<div class="containerX">
+
     <div style="margin: 40px 40px 20px 40px;">
       <h4 class="card-title" style="color: #777;">Capgemini foot</h4>
-      <h5 class="card-subtitle my-2"  style="color: #39F;">Liste des Matchs</h5>
+      <h5 class="card-subtitle my-2" style="color: #39F;">Liste des Matchs</h5>
     </div>
+    <!-- title -->
+    <div class="containerX">
+      <div *ngFor="let champion of champion">
+        <div *ngIf="champion.statut == 'GROUPE'">
+          <br>
+          <h5 class="card-subtitle text-muted" style="margin: 10px 40px 0px 40px;"><strong> Les matchs de groupe A</strong></h5>
+          <div *ngFor="let group of groupA">
+            <div *ngFor='let match of matchs'>
+              <div *ngIf="match.teamHome.name == group.teamName">
+                <div *ngIf="match.stage ==  champion.statut">
+
+                  <div class="card bg-light mb-3 border-dark" style="margin: 40px 40px;">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-2" style="padding-top :  30px;">
+                          Phase : {{match.stage}}<br>
+                        </div>
+
+                        <div class="col-8" style="text-align : center; right: 30px;">
+                          <div *ngIf="match.matchDate" style="color:#999; font-size: 14px;">{{match.matchDate}}</div>
+                          <div *ngIf="!match.matchDate" style="color:#999; font-size: 14px;">Date non définie</div>
+                          <div><span style="padding-right: 12px; font-size: x-large; ">{{match.teamHome?.name}}</span>
+                            <span style="font-size: x-large;"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                            <span style="padding-left: 12px; font-size: x-large; ">{{match.teamAway?.name}}</span>
+                          </div>
+                          <div *ngIf=" match.matchState == states[0].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[0].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[1].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[1].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[2].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[2].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[3].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[3].front}}</div>
+                          </div>
+                        </div>
 
 
-<div *ngFor="let champion of champion">
-    <div class="card" style="margin: 40px 40px;" *ngFor='let match of matchs'>
-        <div class="card-body" *ngIf="match.stage ==  champion.statut">
-          <div class="row">
-            <div class="col-2" style="padding-top : 10px;">
-                Phase : {{match.stage}}<br>
-                {{match.site}}
+                        <div class="col-2" style="padding-top : 30px; left :20px ;">
+                          Site : {{match.site}}<br>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-10" style="text-align : center;">
-                <div ><Strong >{{match.teamHome?.name}}</Strong> 
-                <span class=>  {{match.scoreHome}} : {{match.scoreAway}} </span>  
-                <span class=><Strong>{{match.teamAway?.name}}</Strong></span></div>
-                <div  *ngIf=" match.matchState == states[0].name" style="font-size: 12px;" ><div>{{states[0].front}}</div></div>
-                <div  *ngIf=" match.matchState == states[1].name" style="font-size: 12px;" ><div>{{states[1].front}}</div></div>
-                <div  *ngIf=" match.matchState == states[2].name" style="font-size: 12px;" ><div>{{states[2].front}}</div></div>
-                <div  *ngIf=" match.matchState == states[3].name" style="font-size: 12px;" ><div>{{states[3].front}}</div></div>
-                <div *ngIf="match.matchDate" >{{match.matchDate}}</div>
-                <div  *ngIf="!match.matchDate" style="color:#999">Date non définie</div>
+          </div>
+          <br>
+
+          <h5 class="card-subtitle text-muted" style="margin: 10px 40px 0px 40px;"><strong> Les matchs de groupe B</strong></h5>
+          <div *ngFor="let group of groupB">
+            <div *ngFor='let match of matchs'>
+              <div *ngIf="match.teamHome.name == group.teamName">
+                <div *ngIf="match.stage ==  champion.statut">
+
+                  <div class="card border-dark" style="margin: 40px 40px;">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-2" style="padding-top :  30px;">
+                          Phase : {{match.stage}}<br>
+                        </div>
+
+                        <div class="col-8" style="text-align : center; right: 30px;">
+                          <div *ngIf="match.matchDate" style="color:#999; font-size: 14px;">{{match.matchDate}}</div>
+                          <div *ngIf="!match.matchDate" style="color:#999; font-size: 14px;">Date non définie</div>
+                          <div><span style="padding-right: 12px; font-size: x-large; ">{{match.teamHome?.name}}</span>
+                            <span style="font-size: x-large;"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                            <span style="padding-left: 12px; font-size: x-large; ">{{match.teamAway?.name}}</span>
+                          </div>
+                          <div *ngIf=" match.matchState == states[0].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[0].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[1].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[1].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[2].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[2].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[3].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[3].front}}</div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-2" style="padding-top : 30px; left :20px ;">
+                          Site : {{match.site}}<br>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+
+
+          <h5 class="card-subtitle text-muted" style="margin: 10px 40px 0px 40px;"><strong> Les matchs de groupe C</strong></h5>
+          <div *ngFor="let group of groupC">
+            <div *ngFor='let match of matchs'>
+              <div *ngIf="match.teamHome.name == group.teamName">
+                <div *ngIf="match.stage ==  champion.statut">
+
+
+                  <div class="card border-dark" style="margin: 40px 40px;">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-2" style="padding-top :  30px;">
+                          Phase : {{match.stage}}<br>
+                        </div>
+
+                        <div class="col-8" style="text-align : center; right: 30px;">
+                          <div *ngIf="match.matchDate" style="color:#999; font-size: 14px;">{{match.matchDate}}</div>
+                          <div *ngIf="!match.matchDate" style="color:#999; font-size: 14px;">Date non définie</div>
+                          <div><span style="padding-right: 12px; font-size: x-large; ">{{match.teamHome?.name}}</span>
+                            <span style="font-size: x-large;"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                            <span style="padding-left: 12px; font-size: x-large; ">{{match.teamAway?.name}}</span>
+                          </div>
+                          <div *ngIf=" match.matchState == states[0].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[0].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[1].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[1].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[2].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[2].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[3].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[3].front}}</div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-2" style="padding-top : 30px; left :20px ;">
+                          Site : {{match.site}}<br>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <h5 class="card-subtitle text-muted" style="margin: 10px 40px 0px 40px;"><strong> Les matchs de groupe D</strong></h5>
+          <div *ngFor="let group of groupD">
+            <div *ngFor='let match of matchs'>
+              <div *ngIf="match.teamHome.name == group.teamName">
+                <div *ngIf="match.stage ==  champion.statut">
+
+
+                  <div class="card border-dark" style="margin: 40px 40px;">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-2" style="padding-top :  30px;">
+                          Phase : {{match.stage}}<br>
+                        </div>
+
+                        <div class="col-8" style="text-align : center; right: 30px;">
+                          <div *ngIf="match.matchDate" style="color:#999; font-size: 14px;">{{match.matchDate}}</div>
+                          <div *ngIf="!match.matchDate" style="color:#999; font-size: 14px;">Date non définie</div>
+                          <div><span style="padding-right: 12px; font-size: x-large; ">{{match.teamHome?.name}}</span>
+                            <span style="font-size: x-large;"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                            <span style="padding-left: 12px; font-size: x-large; ">{{match.teamAway?.name}}</span>
+                          </div>
+                          <div *ngIf=" match.matchState == states[0].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[0].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[1].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[1].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[2].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[2].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[3].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[3].front}}</div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-2" style="padding-top : 30px; left :20px ;">
+                          Site : {{match.site}}<br>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <h5 class="card-subtitle text-muted" style="margin: 10px 40px 0px 40px;"><strong> Les matchs de groupe E</strong></h5>
+          <div *ngFor="let group of groupE">
+            <div *ngFor='let match of matchs'>
+              <div *ngIf="match.teamHome.name == group.teamName">
+                <div *ngIf="match.stage ==  champion.statut" class="mydivouter row">
+
+
+                  <div class="card border-dark" style="margin: 40px 40px;">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-2" style="padding-top :  30px;">
+                          Phase : {{match.stage}}<br>
+                        </div>
+
+                        <div class="col-8" style="text-align : center; right: 30px;">
+                          <div *ngIf="match.matchDate" style="color:#999; font-size: 14px;">{{match.matchDate}}</div>
+                          <div *ngIf="!match.matchDate" style="color:#999; font-size: 14px;">Date non définie</div>
+                          <div><span style="padding-right: 12px; font-size: x-large; ">{{match.teamHome?.name}}</span>
+                            <span style="font-size: x-large;"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                            <span style="padding-left: 12px; font-size: x-large; ">{{match.teamAway?.name}}</span>
+                          </div>
+                          <div *ngIf=" match.matchState == states[0].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[0].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[1].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[1].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[2].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[2].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[3].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[3].front}}</div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-2" style="padding-top : 30px; left :20px ;">
+                          Site : {{match.site}}<br>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <h5 class="card-subtitle text-muted" style="margin: 10px 40px 0px 40px;"><strong> Les matchs de groupe F</strong></h5>
+          <div *ngFor="let group of groupF">
+            <div *ngFor='let match of matchs'>
+              <div *ngIf="match.teamHome.name == group.teamName">
+                <div *ngIf="match.stage ==  champion.statut">
+
+
+                  <div class="card border-dark" style="margin: 40px 40px;">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-2" style="padding-top :  30px;">
+                          Phase : {{match.stage}}<br>
+                        </div>
+
+                        <div class="col-8" style="text-align : center; right: 30px;">
+                          <div *ngIf="match.matchDate" style="color:#999; font-size: 14px;">{{match.matchDate}}</div>
+                          <div *ngIf="!match.matchDate" style="color:#999; font-size: 14px;">Date non définie</div>
+                          <div><span style="padding-right: 12px; font-size: x-large; ">{{match.teamHome?.name}}</span>
+                            <span style="font-size: x-large;"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                            <span style="padding-left: 12px; font-size: x-large; ">{{match.teamAway?.name}}</span>
+                          </div>
+                          <div *ngIf=" match.matchState == states[0].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[0].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[1].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[1].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[2].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[2].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[3].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[3].front}}</div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-2" style="padding-top : 30px; left :20px ;">
+                          Site : {{match.site}}<br>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <h5 class="card-subtitle text-muted" style="margin: 10px 40px 0px 40px;"><strong> Les matchs de groupe G</strong></h5>
+          <div *ngFor="let group of groupG">
+            <div *ngFor='let match of matchs'>
+              <div *ngIf="match.teamHome.name == group.teamName">
+                <div *ngIf="match.stage ==  champion.statut" class="mydivouter row">
+
+
+                  <div class="card border-dark" style="margin: 40px 40px;">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-2" style="padding-top :  30px;">
+                          Phase : {{match.stage}}<br>
+                        </div>
+
+                        <div class="col-8" style="text-align : center; right: 30px;">
+                          <div *ngIf="match.matchDate" style="color:#999; font-size: 14px;">{{match.matchDate}}</div>
+                          <div *ngIf="!match.matchDate" style="color:#999; font-size: 14px;">Date non définie</div>
+                          <div><span style="padding-right: 12px; font-size: x-large; ">{{match.teamHome?.name}}</span>
+                            <span style="font-size: x-large;"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                            <span style="padding-left: 12px; font-size: x-large; ">{{match.teamAway?.name}}</span>
+                          </div>
+                          <div *ngIf=" match.matchState == states[0].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[0].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[1].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[1].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[2].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[2].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[3].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[3].front}}</div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-2" style="padding-top : 30px; left :20px ;">
+                          Site : {{match.site}}<br>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <h5 class="card-subtitle text-muted" style="margin: 10px 40px 0px 40px;"><strong> Les matchs de groupe H</strong></h5>
+          <div *ngFor="let group of groupH">
+            <div *ngFor='let match of matchs'>
+              <div *ngIf="match.teamHome.name == group.teamName">
+                <div *ngIf="match.stage ==  champion.statut">
+
+
+                  <div class="card border-dark" style="margin: 40px 40px;">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-2" style="padding-top :  30px;">
+                          Phase : {{match.stage}}<br>
+                        </div>
+
+                        <div class="col-8" style="text-align : center; right: 30px;">
+                          <div *ngIf="match.matchDate" style="color:#999; font-size: 14px;">{{match.matchDate}}</div>
+                          <div *ngIf="!match.matchDate" style="color:#999; font-size: 14px;">Date non définie</div>
+                          <div><span style="padding-right: 12px; font-size: x-large; ">{{match.teamHome?.name}}</span>
+                            <span style="font-size: x-large;"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                            <span style="padding-left: 12px; font-size: x-large; ">{{match.teamAway?.name}}</span>
+                          </div>
+                          <div *ngIf=" match.matchState == states[0].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[0].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[1].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[1].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[2].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[2].front}}</div>
+                          </div>
+                          <div *ngIf=" match.matchState == states[3].name" style="font-size: 14px; padding-top:  7px; ">
+                            <div>{{states[3].front}}</div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-2" style="padding-top : 30px; left :20px ;">
+                          Site : {{match.site}}<br>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="champion.statut != 'GROUPE'">
+          <div *ngFor='let match of matchs'>
+            <div *ngIf="match.stage ==  champion.statut">
+
+
+              <div class="card border-dark" style="margin: 40px 40px;">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-2" style="padding-top :  30px;">
+                      Phase : {{match.stage}}<br>
+                    </div>
+
+                    <div class="col-8" style="text-align : center; right: 30px;">
+                      <div *ngIf="match.matchDate" style="color:#999; font-size: 14px;">{{match.matchDate}}</div>
+                      <div *ngIf="!match.matchDate" style="color:#999; font-size: 14px;">Date non définie</div>
+                      <div><span style="padding-right: 12px; font-size: x-large; ">{{match.teamHome?.name}}</span>
+                        <span style="font-size: x-large;"> {{match.scoreHome}} : {{match.scoreAway}} </span>
+                        <span style="padding-left: 12px; font-size: x-large; ">{{match.teamAway?.name}}</span>
+                      </div>
+                      <div *ngIf=" match.matchState == states[0].name" style="font-size: 14px; padding-top:  7px; ">
+                        <div>{{states[0].front}}</div>
+                      </div>
+                      <div *ngIf=" match.matchState == states[1].name" style="font-size: 14px; padding-top:  7px; ">
+                        <div>{{states[1].front}}</div>
+                      </div>
+                      <div *ngIf=" match.matchState == states[2].name" style="font-size: 14px; padding-top:  7px; ">
+                        <div>{{states[2].front}}</div>
+                      </div>
+                      <div *ngIf=" match.matchState == states[3].name" style="font-size: 14px; padding-top:  7px; ">
+                        <div>{{states[3].front}}</div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-2" style="padding-top : 30px; left :20px ;">
+                      Site : {{match.site}}<br>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-</div>
